@@ -1,0 +1,203 @@
+[
+  {
+    "id": "health-0",
+    "name": "Ministry of Health Malaysia",
+    "market": "Malaysia",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://www.moh.gov.my/?mid=5",
+    "urgent": true
+  },
+  {
+    "id": "health-1",
+    "name": "Ministry of Health Singapore",
+    "market": "Singapore",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://www.moh.gov.sg/seeking-healthcare/find-a-facility-or-service/mental-health-services/for-the-public/",
+    "urgent": true
+  },
+  {
+    "id": "health-2",
+    "name": "Institute of Mental Health",
+    "market": "Singapore",
+    "city": "Singapore",
+    "region": null,
+    "coverage": "online",
+    "url": "https://www.imh.com.sg/",
+    "urgent": false
+  },
+  {
+    "id": "health-3",
+    "name": "Department of Mental Health Thailand",
+    "market": "Thailand",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://dmh.go.th/",
+    "urgent": true
+  },
+  {
+    "id": "health-4",
+    "name": "Ho Chi Minh City Mental Health Hospital",
+    "market": "Vietnam",
+    "city": "Ho Chi Minh City",
+    "region": null,
+    "coverage": "online",
+    "url": "https://bvtamthanh.org.vn/",
+    "urgent": true
+  },
+  {
+    "id": "health-5",
+    "name": "Marzoeki Mahdi Hospital",
+    "market": "Indonesia",
+    "city": null,
+    "region": null,
+    "coverage": "online",
+    "url": "https://rsmmbogor.com",
+    "urgent": true
+  },
+  {
+    "id": "health-6",
+    "name": "National Center of Neurology and Psychiatry",
+    "market": "Japan",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://www.ncnp.go.jp/nimh/chiiki/en/overview.html",
+    "urgent": false
+  },
+  {
+    "id": "health-7",
+    "name": "Kokoro",
+    "market": "Japan",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://kokoro.ncnp.go.jp/",
+    "urgent": true
+  },
+  {
+    "id": "health-8",
+    "name": "National Mental Health Portal",
+    "market": "South Korea",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "https://www.mentalhealth.go.kr/",
+    "urgent": true
+  },
+  {
+    "id": "health-9",
+    "name": "National Center for Mental Health",
+    "market": "South Korea",
+    "city": null,
+    "region": null,
+    "coverage": "nationwide",
+    "url": "http://www.ncmh.go.kr/",
+    "urgent": false
+  },
+  {
+    "id": "health-10",
+    "name": "National Center for Mental Health",
+    "market": "China",
+    "city": null,
+    "region": "Mainland China",
+    "coverage": "nationwide",
+    "url": "https://ncmhc.org.cn/",
+    "urgent": true
+  },
+  {
+    "id": "health-11",
+    "name": "Ministry of Health and Welfare",
+    "market": "China",
+    "city": "Taipei",
+    "region": "Taipei",
+    "coverage": "online",
+    "url": "https://dep.mohw.gov.tw/DOMHAOH/",
+    "urgent": true
+  },
+  {
+    "id": "health-12",
+    "name": "Community Mental Health Center",
+    "market": "China",
+    "city": "Taipei",
+    "region": "Taipei",
+    "coverage": "online",
+    "url": "https://mental-health.gov.taipei/",
+    "urgent": false
+  },
+  {
+    "id": "health-13",
+    "name": "Peking University Sixth Hospital",
+    "market": "China",
+    "city": "Beijing",
+    "region": "Mainland China",
+    "coverage": "online",
+    "url": "http://www.pkuh6.cn",
+    "urgent": false
+  },
+  {
+    "id": "health-14",
+    "name": "Beijing Anding Hospital",
+    "market": "China",
+    "city": "Beijing",
+    "region": "Mainland China",
+    "coverage": "online",
+    "url": "http://www.bjad.com.cn",
+    "urgent": false
+  },
+  {
+    "id": "health-15",
+    "name": "Shanghai Mental Health Center",
+    "market": "China",
+    "city": "Shanghai",
+    "region": "Mainland China",
+    "coverage": "online",
+    "url": "http://www.smhc.org.cn",
+    "urgent": false
+  },
+  {
+    "id": "health-16",
+    "name": "The Affiliated Brain Hospital of Guangzhou Medical University",
+    "market": "China",
+    "city": "Guangzhou",
+    "region": "Mainland China",
+    "coverage": "online",
+    "url": "http://www.gzbrain.cn",
+    "urgent": false
+  },
+  {
+    "id": "health-17",
+    "name": "Shenzhen Kangning Hospital",
+    "market": "China",
+    "city": "Shenzhen",
+    "region": "Mainland China",
+    "coverage": "online",
+    "url": "http://www.szknyy.com",
+    "urgent": false
+  },
+  {
+    "id": "health-18",
+    "name": "Shall We Talk",
+    "market": "China",
+    "city": "Hong Kong",
+    "region": "Hong Kong",
+    "coverage": "online",
+    "url": "https://shallwetalk.hk/en/resources/related-links/",
+    "urgent": true
+  },
+  {
+    "id": "mental-health-hanoi",
+    "market": "Vietnam",
+    "city": "Hanoi",
+    "name": "Vinmec Times City International Hospital - Integrated Mental Healthcare Center",
+    "address": "458 Minh Khai Street, Vinh Tuy Ward, Hanoi, Vietnam",
+    "url": "https://www.vinmec.com/eng/hospital/integrated-mental-healthcare-center",
+    "annotation": false,
+    "nationalNote": false,
+    "urgent": false
+  }
+]

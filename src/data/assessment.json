@@ -1,0 +1,152 @@
+[
+  {
+    "id": "assessment-0",
+    "market": "Malaysia",
+    "city": "Kuala Lumpur/Klang Valley",
+    "name": "National Autism Society of Malaysia (NASOM) - Setia Alam One-Stop-Centre (OSC)",
+    "address": "25A-5, Setia Avenue, Jalan Setia Prima S U13/S, Section 13, Setia Alam, 40170 Shah Alam, Selangor Darul Ehsan",
+    "url": "https://www.nasom.org.my/centre/nasom-setia-alam/",
+    "annotation": false,
+    "nationalNote": true
+  },
+  {
+    "id": "assessment-1",
+    "market": "Singapore",
+    "city": "Singapore",
+    "name": "Changi General Hospital - Clinical Psychology",
+    "address": "2 Simei Street 3, Singapore 529889",
+    "url": "https://www.cgh.com.sg/our-specialties/clinical-psychology",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-2",
+    "market": "China",
+    "city": "Hong Kong",
+    "name": "Queen Mary Hospital - Department of Psychiatry",
+    "address": "102 Pok Fu Lam Road, Hong Kong",
+    "url": "https://www8.ha.org.hk/qmh/services/clinical_department/department/psy/psy.aspx",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-3",
+    "market": "China",
+    "city": "Taipei",
+    "name": "National Taiwan University Hospital - Department of Psychiatry",
+    "address": "No. 7, Zhongshan South Road, Zhongzheng District, Taipei City 100, Taiwan",
+    "url": "https://www.ntuh.gov.tw/PSY/Fpage.action?fid=4962&muid=",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-4",
+    "market": "Japan",
+    "city": "Tokyo",
+    "name": "The University of Tokyo Hospital - Department of Neuropsychiatry",
+    "address": "7-3-1 Hongo, Bunkyo-ku, Tokyo 113-8655, Japan",
+    "url": "https://www.h.u-tokyo.ac.jp/english/centers-services/clinical-divisions/neuropsychiatry/index.html",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-5",
+    "market": "Japan",
+    "city": "Osaka",
+    "name": "Wakeno Hospital - Adult Developmental Disorder Specialist Clinic",
+    "address": "5-3-33 Higashinodamachi, Miyakojima-ku, Osaka 534-0024, Japan",
+    "url": "https://www.wakeno-clinic.com/",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-6",
+    "market": "South Korea",
+    "city": "Seoul",
+    "name": "Asan Medical Center - Department of Psychiatry",
+    "address": "88, Olympic-ro 43-gil, Songpa-gu, Seoul 05505, South Korea",
+    "url": "https://psy.amc.seoul.kr/asan/depts/psy/K/content.do?menuId=864",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-7",
+    "market": "China",
+    "city": "Beijing",
+    "name": "Peking University Sixth Hospital",
+    "address": "51 Huayuan North Road, Haidian District, Beijing, China",
+    "url": "https://www.pkuh6.cn/",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-8",
+    "market": "China",
+    "city": "Shanghai",
+    "name": "Shanghai Mental Health Center",
+    "address": "600 Wanping South Road, Xuhui District, Shanghai, China",
+    "url": "https://www.smhc.org.cn/lczl/tsks/xlzxmz.htm",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-9",
+    "market": "China",
+    "city": "Shenzhen",
+    "name": "Shenzhen Kangning Hospital / Shenzhen Mental Health Center",
+    "address": "1080 Cuizhu Road, Luohu District, Shenzhen, China",
+    "url": "https://www.szknyy.com/",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-10",
+    "market": "China",
+    "city": "Guangzhou",
+    "name": "The Affiliated Brain Hospital of Guangzhou Medical University",
+    "address": "218 Fangcun Avenue Middle, Liwan District, Guangzhou, China",
+    "url": "https://www.gzbrain.cn/",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-11",
+    "market": "Vietnam",
+    "city": "Hanoi",
+    "name": "Vinmec Times City International Hospital - Integrated Mental Healthcare Center",
+    "address": "458 Minh Khai Street, Vinh Tuy Ward, Hanoi, Vietnam",
+    "url": "https://www.vinmec.com/eng/hospital/integrated-mental-healthcare-center",
+    "annotation": false,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-12",
+    "market": "Vietnam",
+    "city": "Ho Chi Minh City",
+    "name": "Vinmec Central Park International Hospital",
+    "address": "720A Dien Bien Phu Street, Thanh My Tay Ward, Ho Chi Minh City, Vietnam",
+    "url": "https://www.vinmec.com/eng/hospital/vinmec-central-park-international-hospital-1",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-13",
+    "market": "Thailand",
+    "city": "Bangkok",
+    "name": "Bangkok Hospital - Psychiatry Clinic",
+    "address": "2 Soi Soonvijai 7, New Petchburi Road, Huai Khwang, Bangkok 10310, Thailand",
+    "url": "https://www.bangkokhospital.com/en/bangkok/center-clinic/brain/special-clinic-psychiatry/overview",
+    "annotation": true,
+    "nationalNote": false
+  },
+  {
+    "id": "assessment-14",
+    "market": "Indonesia",
+    "city": "Jakarta",
+    "name": "Dr. Cipto Mangunkusumo National General Hospital - Psychiatry Polyclinic",
+    "address": "Jl. Pangeran Diponegoro No. 71, Central Jakarta, Indonesia",
+    "url": "https://rscm.co.id/en/services/outpatients/adult-psychiatry-clinic/staff",
+    "annotation": true,
+    "nationalNote": false
+  }
+]

@@ -1,0 +1,576 @@
+{
+  "questions": [
+    "I find it difficult to stay focused on tasks that do not hold my interest.",
+    "I often intend to do something but struggle to get started, even when it is important.",
+    "I frequently lose track of what I was doing when my attention is interrupted.",
+    "Organising everyday tasks, priorities or deadlines takes considerable effort for me.",
+    "I sometimes act or speak before I have had time to think through the consequences.",
+    "I find it uncomfortable to remain inactive when I feel the need to be doing something.",
+    "I am easily drawn towards something new or interesting, even when I should be concentrating on something else.",
+    "I sometimes have difficulty working out what another person expects from me when they do not say it directly.",
+    "Social situations often require conscious effort rather than feeling automatic.",
+    "I sometimes realise afterwards that I misunderstood another person's tone, intention or reaction.",
+    "I find conversations involving unspoken social rules harder to navigate than conversations with a clear purpose.",
+    "Certain sounds, lights, textures, smells or other sensations affect me more strongly than they seem to affect other people.",
+    "Busy environments with many things happening at once can become overwhelming for me.",
+    "I sometimes avoid places, clothing, foods or activities because of how they feel to my senses.",
+    "Unexpected changes to plans can unsettle me more than I would like.",
+    "I feel more comfortable when I know what to expect and can prepare for it.",
+    "Once I have settled into a particular way of doing something, changing that approach can be difficult.",
+    "When something strongly interests me, I can become so absorbed that I lose awareness of time or other things I need to do.",
+    "Repetitive movements, sounds or familiar activities can help me regulate myself when I am stressed, restless or overwhelmed.",
+    "Switching my attention away from something I am deeply engaged in can be difficult, even when I know I need to stop.",
+    "I can strongly prefer predictability while also becoming restless or drawn towards novelty.",
+    "I sometimes feel pulled between needing structure to function well and resisting that same structure when it feels restrictive."
+  ],
+  "framing": [
+    "Think about your usual experiences as an adult, across different parts of your life. Choose the answer that best reflects you overall.",
+    "There are no right or wrong answers. Try to answer based on what is generally true for you, rather than an unusual good or difficult day."
+  ],
+  "responses": [
+    "Strongly agree",
+    "Agree",
+    "Neither agree nor disagree",
+    "Disagree",
+    "Strongly disagree"
+  ],
+  "reassurances": [
+    "Each question helps build a clearer picture of your traits.",
+    "Some questions may feel similar, but they explore different aspects of your experience.",
+    "Your responses are helping us understand how different traits may overlap.",
+    "You're making good progress. The remaining questions help complete your trait profile.",
+    "Nearly there. These final responses help complete the overall picture."
+  ],
+  "areas": [
+    {
+      "name": "Attention & executive function",
+      "levels": [
+        {
+          "text": "Your responses suggest that attention, task initiation, recovering from interruptions and organising everyday priorities are not prominent areas of difficulty for you overall.",
+          "examples": [
+            "Usually being able to start necessary tasks",
+            "Regaining focus after interruptions without major difficulty",
+            "Managing everyday priorities or deadlines with a workable level of effort"
+          ]
+        },
+        {
+          "text": "Your responses suggest that attention and executive-function demands can sometimes require extra effort, particularly when tasks are less engaging or when several priorities compete for attention.",
+          "examples": [
+            "Delaying the start of some important tasks",
+            "Occasionally losing track after interruptions",
+            "Needing extra structure for priorities or deadlines"
+          ]
+        },
+        {
+          "text": "Your responses suggest that staying focused, getting started, recovering from interruptions and organising everyday priorities may often require additional effort.",
+          "examples": [
+            "Difficulty starting tasks even when they matter",
+            "Losing track after interruptions",
+            "More effort needed to organise priorities or deadlines"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Impulsivity & activity regulation",
+      "levels": [
+        {
+          "text": "Your responses suggest that acting before thinking, restlessness and being pulled towards new stimulation are not prominent patterns for you overall.",
+          "examples": [
+            "Usually having time to consider a response before acting",
+            "Being reasonably comfortable during periods of lower activity",
+            "Staying with a current task despite other interesting possibilities"
+          ]
+        },
+        {
+          "text": "Your responses suggest that impulsivity or restlessness may appear in some situations, especially when you are under-stimulated, excited or presented with something more interesting.",
+          "examples": [
+            "Occasionally speaking or acting before fully thinking it through",
+            "Feeling restless during periods of inactivity",
+            "Sometimes shifting towards something new before finishing the current task"
+          ]
+        },
+        {
+          "text": "Your responses suggest that impulsivity, restlessness and attraction to new stimulation may frequently influence how you respond or direct your attention.",
+          "examples": [
+            "Acting or speaking before considering the consequences",
+            "Finding inactivity particularly uncomfortable",
+            "Being strongly drawn towards something new even when another task needs attention"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Social & communication",
+      "levels": [
+        {
+          "text": "Your responses suggest that interpreting social expectations, tone and unspoken conversational rules is not a prominent area of difficulty for you overall.",
+          "examples": [
+            "Usually understanding what others expect without needing it stated directly",
+            "Social interactions often feeling relatively intuitive",
+            "Generally recognising tone or intention during conversation"
+          ]
+        },
+        {
+          "text": "Your responses suggest that some social situations require conscious interpretation, particularly when expectations, tone or conversational rules are indirect.",
+          "examples": [
+            "Sometimes needing clearer communication from other people",
+            "Putting conscious effort into unfamiliar social situations",
+            "Occasionally recognising a misunderstanding only afterwards"
+          ]
+        },
+        {
+          "text": "Your responses suggest that navigating indirect expectations, tone and unspoken social rules may often require conscious effort.",
+          "examples": [
+            "Difficulty knowing what someone expects when they do not say it directly",
+            "Social situations feeling effortful rather than automatic",
+            "Misunderstanding tone, intention or unspoken conversational rules"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sensory processing",
+      "levels": [
+        {
+          "text": "Your responses suggest that sensory input is not a prominent source of discomfort or overwhelm for you overall.",
+          "examples": [
+            "Usually tolerating everyday sounds, lights, textures or smells",
+            "Busy environments being manageable most of the time",
+            "Rarely needing to avoid activities because of sensory qualities"
+          ]
+        },
+        {
+          "text": "Your responses suggest that certain sensory environments can sometimes become distracting, uncomfortable or overwhelming.",
+          "examples": [
+            "Being particularly affected by some sounds, lights, textures or smells",
+            "Becoming tired or overloaded in busy environments",
+            "Occasionally avoiding something because of how it feels to your senses"
+          ]
+        },
+        {
+          "text": "Your responses suggest that sensory input may frequently affect your comfort, concentration or ability to remain in certain environments.",
+          "examples": [
+            "Strong reactions to particular sounds, lights, textures or smells",
+            "Busy environments becoming overwhelming",
+            "Avoiding places, clothing, foods or activities because of sensory discomfort"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Routine & predictability",
+      "levels": [
+        {
+          "text": "Your responses suggest that unexpected change and departures from familiar routines are generally manageable for you.",
+          "examples": [
+            "Adapting to changed plans without substantial disruption",
+            "Being comfortable with a reasonable amount of uncertainty",
+            "Changing an established approach when circumstances require it"
+          ]
+        },
+        {
+          "text": "Your responses suggest that predictability and preparation can be helpful, while changes to plans or established approaches may sometimes take additional adjustment.",
+          "examples": [
+            "Preferring advance notice of changes",
+            "Feeling more comfortable when expectations are clear",
+            "Needing some time to adjust an established way of doing something"
+          ]
+        },
+        {
+          "text": "Your responses suggest that predictability, preparation and familiar ways of doing things may play an important role in helping you feel settled and organised.",
+          "examples": [
+            "Unexpected changes feeling particularly unsettling",
+            "Strongly preferring to know what to expect in advance",
+            "Finding it difficult to change an established approach once it is familiar"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Focus & self-regulation",
+      "levels": [
+        {
+          "text": "Your responses suggest that intense absorption, difficulty disengaging and repetitive or familiar self-regulation behaviours are not prominent patterns for you overall.",
+          "examples": [
+            "Usually noticing time and other responsibilities while engaged in an interest",
+            "Switching away from an engaging activity without major difficulty",
+            "Not strongly relying on repetitive or familiar activities to regulate yourself"
+          ]
+        },
+        {
+          "text": "Your responses suggest that strong interests and familiar regulating behaviours can sometimes shape your attention or help you manage stress and restlessness.",
+          "examples": [
+            "Occasionally losing track of time while deeply engaged",
+            "Needing extra effort to switch away from an absorbing activity",
+            "Using familiar movements, sounds or activities to settle yourself in some situations"
+          ]
+        },
+        {
+          "text": "Your responses suggest that intense focus and self-regulation patterns may frequently influence how you manage attention, transitions, stress or overwhelm.",
+          "examples": [
+            "Becoming deeply absorbed and losing awareness of time",
+            "Finding it difficult to disengage from something highly engaging",
+            "Relying on repetitive movements, sounds or familiar activities to regulate yourself"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cross-trait interaction",
+      "levels": [
+        {
+          "text": "Your responses suggest that tension between predictability and novelty, or between needing structure and resisting it, is not a prominent pattern for you overall.",
+          "examples": [
+            "Structure and flexibility usually coexisting without strong conflict",
+            "Novelty not regularly disrupting your preference for predictability",
+            "Being able to use routines without frequently feeling constrained by them"
+          ]
+        },
+        {
+          "text": "Your responses suggest that you may sometimes experience competing needs for structure and novelty, depending on the situation or your level of energy and interest.",
+          "examples": [
+            "Wanting predictable plans but occasionally craving a change",
+            "Finding structure useful at some times and restrictive at others",
+            "Moving between routine-seeking and novelty-seeking in different contexts"
+          ]
+        },
+        {
+          "text": "Your responses suggest a stronger tension between needing predictability and being drawn towards novelty, or between relying on structure and resisting it when it feels restrictive.",
+          "examples": [
+            "Strongly wanting predictability while also becoming restless with sameness",
+            "Depending on structure to function while sometimes resisting that structure",
+            "Feeling pulled between competing needs for routine and stimulation"
+          ]
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "name": "No strong trait pattern identified",
+      "text": "Your responses did not show a strong overall pattern of ADHD-associated or ASD-associated traits in this assessment. You may still recognise individual traits in your results, but they were not prominent enough here to form a stronger overall pattern."
+    },
+    {
+      "name": "ADHD-associated traits",
+      "text": "Your responses show a stronger pattern of traits commonly associated with ADHD, particularly in areas such as attention, executive function, impulsivity or activity regulation. This result is for self-reflection and does not establish an ADHD diagnosis."
+    },
+    {
+      "name": "ASD-associated traits",
+      "text": "Your responses show a stronger pattern of traits commonly associated with autism, particularly in areas such as social communication, sensory processing, routine or predictability. This result is for self-reflection and does not establish an autism diagnosis."
+    },
+    {
+      "name": "AuDHD-associated traits",
+      "text": "Your responses show a pattern of traits associated with both ADHD and autism. This combination is commonly referred to as AuDHD. This result is for self-reflection and does not establish an ADHD, autism or AuDHD diagnosis."
+    }
+  ],
+  "summaries": [
+    [
+      {
+        "title": "Your pattern looks relatively balanced",
+        "text": "Your responses did not show a strong overall ADHD-associated or ASD-associated pattern. You may still recognise individual traits in some areas, and those can still be useful for understanding what helps or challenges you."
+      },
+      {
+        "title": "Notice the areas that stand out",
+        "text": "Your detailed results may show particular Lower, Moderate or Higher areas even without a strong overall classification. Those individual patterns can be more useful than the overall label alone."
+      },
+      {
+        "title": "Use what is useful",
+        "text": "If a particular difficulty affects your daily life, you can still explore practical strategies or discuss it with a qualified professional regardless of this result."
+      }
+    ],
+    [
+      {
+        "title": "Attention may depend on interest and demand",
+        "text": "Your responses suggest that directing attention, starting tasks or organising priorities may require more effort, particularly when something is repetitive or less engaging."
+      },
+      {
+        "title": "Regulation can vary by situation",
+        "text": "Restlessness, impulsive responses or attraction to something more interesting may become more noticeable in some environments than others."
+      },
+      {
+        "title": "Strengths and challenges can coexist",
+        "text": "The same patterns that make some tasks difficult may also accompany curiosity, energy or strong engagement when something captures your attention. Context matters."
+      }
+    ],
+    [
+      {
+        "title": "Predictability can reduce effort",
+        "text": "Your responses suggest that clear expectations, preparation or familiar ways of doing things may make some situations easier to navigate."
+      },
+      {
+        "title": "Sensory and social demands can matter",
+        "text": "Your environment and the amount of interpretation required in social situations may affect your concentration, comfort or energy."
+      },
+      {
+        "title": "Strengths and challenges can coexist",
+        "text": "The same traits can be useful in some settings and demanding in others. Understanding the environments that work well for you can be valuable."
+      }
+    ],
+    [
+      {
+        "title": "Big ideas, different focus",
+        "text": "You may experience periods of intense focus alongside difficulty directing your attention towards tasks that feel less engaging."
+      },
+      {
+        "title": "Sensory patterns matter",
+        "text": "Sensitivity to your environment may affect concentration, energy and how easily you become overwhelmed."
+      },
+      {
+        "title": "Strengths and challenges can coexist",
+        "text": "The same traits can be helpful in some situations and difficult in others. Context often makes a significant difference."
+      }
+    ]
+  ],
+  "nextSteps": [
+    "Try practical strategies that match the areas you find most difficult.",
+    "Learn more from trusted ADHD, autism and AuDHD resources where relevant to your result.",
+    "Consider professional assessment if you would like greater certainty."
+  ],
+  "scoreTexts": [
+    "Your combined score shows a lower level of overlapping ADHD- and ASD-associated traits in this assessment. Individual trait areas may still stand out in your detailed results.",
+    "Your combined score shows a moderate level of overlapping ADHD- and ASD-associated traits in this assessment. Some shared or interacting patterns may be meaningful in your everyday experience.",
+    "Your combined score shows a higher level of overlapping ADHD- and ASD-associated traits in this assessment, with stronger evidence of patterns occurring across both trait dimensions."
+  ],
+  "terms": [
+    {
+      "title": "Purpose of MindLens",
+      "paragraphs": [
+        "MindLens is a research-informed self-assessment designed to help you reflect on traits associated with ADHD, Autism Spectrum Disorder (ASD) and overlapping ADHD and ASD traits commonly referred to as AuDHD."
+      ]
+    },
+    {
+      "title": "Not a diagnosis or medical advice",
+      "paragraphs": [
+        "MindLens is not a diagnostic instrument and does not replace assessment, diagnosis, treatment or advice from a qualified healthcare professional."
+      ]
+    },
+    {
+      "title": "Accuracy and limitations",
+      "paragraphs": [
+        "Your results are based on your responses and research-informed screening concepts. They cannot establish whether you have ADHD, ASD, AuDHD or another condition. Other conditions, circumstances and life experiences may produce similar traits."
+      ]
+    },
+    {
+      "title": "Your results and decisions",
+      "paragraphs": [
+        "MindLens results are provided for information and self-reflection. Any decisions you make after viewing your results remain your responsibility."
+      ]
+    },
+    {
+      "title": "Emergency situations",
+      "paragraphs": [
+        "MindLens is not an emergency, crisis or medical service. If you require urgent help, contact the appropriate emergency or crisis service in your location."
+      ]
+    },
+    {
+      "title": "Professional support listings",
+      "paragraphs": [
+        "Professional support listings are provided to help you locate institutional assessment services. Provider information may change. Always check the provider's website for current information."
+      ]
+    },
+    {
+      "title": "Personal information and assessment responses",
+      "paragraphs": [
+        "MindLens does not require an account, name, email address or phone number to complete the assessment.",
+        "Your assessment results are not permanently stored by MindLens and are intended to remain available only during your current browser session. Standard hosting infrastructure may process technical information required to deliver the website."
+      ]
+    },
+    {
+      "title": "Limitation of liability",
+      "paragraphs": [
+        "By using MindLens, you acknowledge that the assessment is provided for informational and self-reflection purposes only and is not a medical or clinical diagnosis.",
+        "To the fullest extent permitted by applicable law, MindLens, its creators, contributors and technical providers will not be liable for any loss, harm, distress, decision, action or consequence arising from your use of, or reliance on, the assessment, its results, recommendations, external links or listed support services.",
+        "You agree that you use MindLens voluntarily and at your own discretion and accept responsibility for any decisions you make based on the information provided.",
+        "Nothing in these Terms excludes or limits any rights or liabilities that cannot legally be excluded."
+      ]
+    },
+    {
+      "title": "Changes to MindLens",
+      "paragraphs": [
+        "MindLens may change its assessment, content, functionality or these Terms as the product develops."
+      ]
+    },
+    {
+      "title": "",
+      "paragraphs": [""]
+    }
+  ],
+  "accuracyIntro": "MindLens is a research-informed self-assessment designed to help you explore traits associated with ADHD, Autism Spectrum Disorder (ASD) and AuDHD.",
+  "accuracy": [
+    {
+      "title": "What can the results tell me?",
+      "paragraphs": [
+        "Your responses can highlight patterns commonly associated with ADHD, ASD or both, including areas such as attention, executive function, sensory processing, social communication and other overlapping traits.",
+        "The results can help you identify areas you may want to understand or explore further."
+      ]
+    },
+    {
+      "title": "What can't the results tell me?",
+      "paragraphs": [
+        "MindLens cannot determine with certainty whether you have ADHD, ASD, AuDHD or another condition.",
+        "There is currently insufficient evidence to establish the diagnostic accuracy of a combined assessment like MindLens. Different conditions, circumstances and life experiences can also produce similar traits.",
+        "Your result is a guide for self-reflection, not a diagnosis."
+      ]
+    },
+    {
+      "title": "Research-informed, not diagnostic",
+      "paragraphs": [
+        "MindLens draws on published research and established screening approaches for ADHD and autism.",
+        "Screening tools can help identify traits that may warrant further assessment, but they are not sufficient on their own to make a diagnosis. Professional assessment considers additional factors such as developmental history, everyday functioning, symptoms across different settings and alternative explanations."
+      ]
+    },
+    {
+      "title": "No paywall. No paid results.",
+      "paragraphs": [
+        "MindLens is free to use. Your complete assessment and results are available without payment.",
+        "Optional donations help support hosting and maintenance."
+      ]
+    },
+    {
+      "title": "Your results are temporary",
+      "paragraphs": [
+        "No account is required.",
+        "Your results are not saved by MindLens and are only available during your current session."
+      ]
+    },
+    {
+      "title": "Want greater certainty?",
+      "paragraphs": [
+        "If your results raise questions or you would like greater clarity, consider discussing them with a qualified professional."
+      ]
+    }
+  ],
+  "support": {
+    "intro": "MindLens is a free independent project created to make research-informed ADHD, ASD and AuDHD self-reflection more accessible.",
+    "body": [
+      "Keeping MindLens free still has costs, including hosting, maintenance and continued development. If you find the project useful and would like to support it, an optional contribution helps me keep improving MindLens while keeping the assessment and results free for everyone.",
+      "There is no paid version, subscription or locked result. Supporting MindLens does not change what you can access."
+    ],
+    "futureTitle": "Open for others in the future",
+    "future": "I also intend to make the MindLens Git repository publicly available in the future so others can inspect the project, learn from it and reuse the work."
+  },
+  "ui": {
+    "back": "Back",
+    "previous": "Previous",
+    "next": "Next",
+    "complete": "Complete Assessment",
+    "start": "Start Assessment",
+    "retake": "Retake assessment",
+    "explore": "Explore your results",
+    "together": "Putting it all together",
+    "professional": "Find professional support",
+    "assessmentSupport": "Find professional assessment support",
+    "supportMe": "Support Me",
+    "terms": "Terms of Use",
+    "accuracy": "How accurate is this assessment?",
+    "hero": "ADHD, ASD or Both?",
+    "heroText": "A research-informed assessment to help you explore your unique trait profile.",
+    "adult": "I am 18 years old or older.",
+    "consent": "I have read and agree to the Terms of Use. I understand that MindLens is a research-informed self-assessment, not a diagnosis, and that I use the results at my own discretion.",
+    "time": "Takes about 10-15 minutes.",
+    "learn": "Learn about the research, limitations and what your results can - and cannot - tell you.",
+    "question": "Question {n} of 22",
+    "progress": "{n}% complete",
+    "building": "Building your trait profile",
+    "buildingText": "Looking across your responses for patterns associated with ADHD, ASD and overlapping traits.",
+    "moment": "This only takes a moment...",
+    "viewResults": "View my results now",
+    "results": "Assessment Results",
+    "yourResult": "Your result",
+    "score": "Score",
+    "combined": "Combined indication score",
+    "aboutScore": "About this score",
+    "meaning": "What this means",
+    "reassurance": "Your result is a guide for self-reflection, not a diagnosis.",
+    "exploreIntro": "See which areas of your responses contributed most to your overall result.",
+    "examples": "What this can look like",
+    "togetherIntro": "Here’s a simple summary of how your ADHD and ASD traits may interact - and what you can do next.",
+    "nextSteps": "Recommended next steps",
+    "oneAtATime": "You do not need to act on everything at once. Start with what feels most helpful.",
+    "broader": "Looking for mental health or urgent support?",
+    "looking": "I’m looking for:",
+    "city": "City",
+    "country": "Country / region",
+    "visit": "Visit official website",
+    "annotation": "Service details may vary. Contact the centre for current adult assessment information.",
+    "urgentDescription": "Official mental health support and urgent-care information",
+    "nationwide": "National coverage",
+    "online": "Online information",
+    "supportCTA": "Support on Buy Me a Coffee",
+    "thanks": "Thank you for being part of this journey.",
+    "thanksText": "Your support helps keep MindLens free and accessible.",
+    "restartTitle": "Please restart your assessment",
+    "restartText": "Your assessment session is incomplete or unavailable.",
+    "more": "More content below",
+    "copied": "Link copied",
+    "copyFailed": "Please copy the link below.",
+    "copyright": "All rights reserved.",
+    "tagline": "UNDERSTAND · REFLECT · MOVE FORWARD",
+    "footerLeft": "A MORE UNDERSTANDING TOMORROW",
+    "footerScript": "Different Minds Brighter Lives",
+    "footReflection": "For self-reflection only",
+    "footDiagnosis": "Not a medical diagnosis",
+    "footAdvice": "Seek professional advice",
+    "attentionDifference": "Attention Difference",
+    "differentPerspective": "Different Perspective",
+    "sharedStrengths": "Shared Strengths",
+    "supportIntro": "Find official services for assessment, mental health and urgent support across selected locations in Asia.",
+    "providerNotice": "Provider information may change. Check the official website for current services, eligibility and appointment information.",
+    "nasomNote": "Services across Malaysia. NASOM is a national organisation. If you're outside the Klang Valley, contact NASOM for information about assessment and support services available in your state or area."
+  },
+  "trust": [
+    {
+      "title": "Research-informed",
+      "text": "Based on established ADHD and autism research."
+    },
+    {
+      "title": "For self-reflection only",
+      "text": "Designed to help you understand your traits, not diagnose them."
+    },
+    {
+      "title": "No personal data required",
+      "text": "No account or personal details needed to take the assessment."
+    }
+  ],
+  "status": [
+    "Processing your answers",
+    "Analysing key traits",
+    "Identifying patterns"
+  ],
+  "bands": ["Lower", "Moderate", "Higher"],
+  "indications": ["Lower indication", "Moderate indication", "High indication"],
+  "supportTypes": [
+    "Assessment support",
+    "Mental health support",
+    "Urgent support"
+  ],
+  "markets": [
+    "Malaysia",
+    "Singapore",
+    "Thailand",
+    "Vietnam",
+    "Indonesia",
+    "China",
+    "Japan",
+    "South Korea"
+  ],
+  "cities": [
+    "Kuala Lumpur/Klang Valley",
+    "Singapore",
+    "Bangkok",
+    "Hanoi",
+    "Ho Chi Minh City",
+    "Jakarta",
+    "Beijing",
+    "Shanghai",
+    "Guangzhou",
+    "Shenzhen",
+    "Hong Kong",
+    "Taipei",
+    "Tokyo",
+    "Osaka",
+    "Seoul"
+  ],
+  "regions": ["Mainland China", "Hong Kong", "Taipei"]
+}
