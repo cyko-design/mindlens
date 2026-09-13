@@ -46,7 +46,9 @@ export function restoreSession(raw) {
       ...initialSession(),
       ...s,
       openAreas: Array.isArray(s.openAreas)
-        ? s.openAreas.filter((n) => Number.isInteger(n) && n >= 0 && n < 7)
+        ? s.openAreas
+            .filter((n) => Number.isInteger(n) && n >= 0 && n < 7)
+            .slice(0, 1)
         : [],
       resultTab: s.resultTab === 1 ? 1 : 0,
       supportType: [0, 1, 2].includes(s.supportType) ? s.supportType : 0,

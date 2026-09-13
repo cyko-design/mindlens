@@ -5,6 +5,7 @@
   font-synthesis: none;
   font-size: 16px;
   line-height: 1.5;
+  --page-bg: #fff;
   --ink: #102744;
   --muted: #657393;
   --purple: #7560bb;
@@ -23,7 +24,8 @@
   --space-7: 48px;
   --control: 48px;
   --shadow: 0 4px 16px #28345507;
-  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-top: 0px;
+  --device-safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 * {
@@ -31,6 +33,7 @@
 }
 body {
   margin: 0;
+  background: var(--page-bg);
 }
 button,
 input,
@@ -99,21 +102,26 @@ h1:focus {
   display: flex;
   flex-direction: column;
   position: relative;
-  background: linear-gradient(130deg, #fff 20%, #fdfcfe 80%);
+  background: var(--page-bg);
 }
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #ffffffed;
-  backdrop-filter: blur(12px);
-  padding: calc(var(--safe-top) + 18px) var(--gutter) 16px;
+  background: var(--page-bg);
+  padding: calc(var(--device-safe-top) + var(--safe-top)) var(--gutter) 8px;
 }
 .header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+}
+.home-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
 }
 .logo {
   display: inline-flex;
@@ -156,7 +164,7 @@ h1:focus {
   white-space: normal;
 }
 .page {
-  padding: 12px var(--gutter) 0;
+  padding: 6px var(--gutter) 0;
   position: relative;
   z-index: 2;
   flex: 1;
@@ -307,14 +315,10 @@ h1:focus {
   color: #596e8b;
 }
 .script-art {
-  max-width: 116px;
-  color: #8172b9;
-  font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-style: italic;
-  font-size: 25px;
-  line-height: 1.02;
-  transform: rotate(-12deg);
-  text-align: center;
+  display: block;
+  width: 90px;
+  height: auto;
+  flex: none;
 }
 .footer-legal {
   text-align: center;
@@ -325,16 +329,24 @@ h1:focus {
 .footer-legal p {
   color: #506381;
 }
-.ambient {
-  animation: drift 16s ease-in-out infinite alternate;
+.ambient .wave-layer {
+  transform-box: fill-box;
   transform-origin: center bottom;
+  animation: drift 16s ease-in-out infinite alternate;
+}
+.ambient .wave-front {
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
+.ambient .wave-lines {
+  animation-duration: 20s;
 }
 @keyframes drift {
   from {
-    transform: translateX(-1%) scaleX(1.04);
+    transform: translate(-1.5%, 0) scaleX(1.04);
   }
   to {
-    transform: translateX(1%) scaleX(1.04);
+    transform: translate(1.5%, -1.2%) scaleX(1.04);
   }
 }
 .home h1 {
@@ -345,9 +357,9 @@ h1:focus {
 }
 .hero-venn {
   position: relative;
-  width: 100%;
+  width: min(84%, 300px);
   aspect-ratio: 1.55;
-  margin: 10px 0 18px;
+  margin: 8px auto 12px;
   isolation: isolate;
 }
 .venn-circle {
@@ -374,7 +386,7 @@ h1:focus {
   flex-direction: column;
   text-align: center;
   width: 30%;
-  top: 26%;
+  top: 23%;
   font-size: 13px;
   line-height: 1.25;
   gap: 5px;
@@ -391,8 +403,8 @@ h1:focus {
   color: #263b70;
 }
 .venn-label svg {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 .venn-label strong {
   font-size: 19px;
@@ -406,8 +418,8 @@ h1:focus {
 .trust {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin: 0 0 24px;
+  gap: 8px;
+  margin: 0 0 14px;
   text-align: center;
 }
 .trust > div {
@@ -422,9 +434,9 @@ h1:focus {
   border-left: 1px solid #ddddeb;
 }
 .trust .icon-disc {
-  margin: 0 auto 10px;
-  width: 38px;
-  height: 38px;
+  margin: 0 auto 6px;
+  width: 34px;
+  height: 34px;
 }
 .trust .icon-disc svg {
   width: 22px;
@@ -443,11 +455,11 @@ h1:focus {
 }
 .entry {
   max-width: 100%;
-  margin: 0 auto 22px;
+  margin: 0 auto 12px;
 }
 .entry > .button {
   display: flex;
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
   min-width: 74%;
 }
 .check {
@@ -549,13 +561,14 @@ h1:focus {
   margin-bottom: 10px;
 }
 .questionnaire h1 {
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.6px;
 }
-.reassurance {
+p.reassurance {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1;
   margin: 14px 0 22px;
 }
 .answers {
@@ -699,8 +712,8 @@ h1:focus {
 }
 .dimension-rows svg {
   color: #6c93ad;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 .dimension-rows .card span {
   font-size: 14px;
@@ -991,12 +1004,19 @@ h1:focus {
   margin: 18px 0;
   font-size: 16px;
 }
-.thanks-gif {
-  display: block;
+.thanks-crop {
   width: 190px;
   max-width: 80%;
+  aspect-ratio: 480 / 230;
+  overflow: hidden;
+  margin: 12px auto;
+}
+.thanks-gif {
+  display: block;
+  width: 100%;
   height: auto;
-  margin: 24px auto;
+  margin: 0;
+  transform: translateY(-24.166667%);
 }
 .future {
   display: flex;
@@ -1032,7 +1052,7 @@ h1:focus {
   border: 0;
   display: grid;
   place-items: center;
-  background: #eee8fe;
+  background: rgb(238 232 254 / 65%);
   color: #735aca;
   box-shadow: 0 2px 8px #35305a29;
   z-index: 25;
@@ -1190,4 +1210,57 @@ h1:focus {
 }
 .header-utilities button:last-child {
   min-width: 36px;
+}
+
+/* Shared reference artwork can extend behind the Home continuation blocks. */
+.home + .footer {
+  overflow: visible;
+}
+.home + .footer > .waves {
+  top: -160px;
+  height: calc(100% + 160px);
+}
+.mobile-app {
+  overflow-x: clip;
+}
+@media (max-height: 740px) {
+  .home .hero-venn {
+    width: min(76%, 270px);
+    margin-block: 4px 8px;
+  }
+  .home .trust {
+    margin-bottom: 10px;
+  }
+  .home .entry {
+    margin-bottom: 6px;
+  }
+  .home .time {
+    margin-block: 6px;
+  }
+}
+.home .trust {
+  margin-inline: -20px;
+  gap: 6px;
+}
+.home .trust p {
+  letter-spacing: -0.15px;
+}
+.home .trust h2 {
+  min-height: 31.2px;
+}
+@media (max-height: 700px) {
+  .home .hero-venn {
+    width: min(70%, 235px);
+  }
+  .home .check {
+    margin-block: 4px;
+  }
+  .home .entry > .button {
+    margin-bottom: 6px;
+  }
+  .home .trust .icon-disc {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+  }
 }

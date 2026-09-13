@@ -20,3 +20,13 @@ Quality gates: deterministic score/boundary/invalid-state tests; locale key pari
 ## Motion policy clarification
 
 The user clarified that Reduced Motion applies only to questionnaire screens. Its CSS override is scoped to `.questionnaire`. Home, Building Profile and desktop handoff retain approved artwork motion; Support Me always displays the unchanged supplied GIF. Other screens remain static.
+
+## Consolidated design review, 13 September 2026
+
+The user's 21-item revision list supersedes earlier interaction/copy decisions. Answers auto-advance after a 180ms selection acknowledgement; Next remains available and pending advance is cancelled on navigation. The final answer completes the assessment, and Building opens Results automatically after 2.4 seconds. Explore maintains one open area, including restored sessions. Header branding links to Home.
+
+The extra safe-top token is zero; device safe-area padding remains separate. Header/page/body share white background. Header-to-Back gap is halved. Question text is 20px/600 and reassurance line height is 1.0. Home uses the exact shortened English trust and consent copy with corresponding central Chinese translations, smaller trait circles and compact spacing.
+
+Overflow measures the actual meaningful main and footer text against the visual viewport. Home alone is exempt. The circular cue uses 65% background opacity and hides after scrolling.
+
+Footer waves use a shared SVG component following the approved Home composition, with layered cyan/lavender washes and fine white curves. The lettering asset contains vector contours of the lettering in the approved desktop reference, not a raster screenshot or substituted font. Support GIF display clips the original frame's transparent y=0..115 and y=346..479 margins; original bytes remain unchanged. The GitHub mark comes from GitHub's official Primer Octicons repository (see asset-sources.md).

@@ -145,11 +145,22 @@ export function useOverflow(ref, disabled) {
     const measure = () => {
       const el = ref.current;
       const viewport = window.visualViewport?.height || innerHeight;
-      const bottom = (el?.getBoundingClientRect().bottom || 0) + scrollY;
+      const footer = el?.closest(".mobile-app")?.querySelector(".footer-legal");
+      const bottom =
+        Math.max(
+          el?.getBoundingClientRect().bottom || 0,
+          footer?.getBoundingClientRect().bottom || 0,
+        ) + scrollY;
       setShow(bottom > viewport + 2 && scrollY < 48);
     };
     const ro = new ResizeObserver(measure);
-    if (ref.current) ro.observe(ref.current);
+    if (ref.current) {
+      ro.observe(ref.current);
+      const footer = ref.current
+        .closest(".mobile-app")
+        ?.querySelector(".footer");
+      if (footer) ro.observe(footer);
+    }
     addEventListener("scroll", measure, { passive: true });
     addEventListener("resize", measure);
     visualViewport?.addEventListener("resize", measure);

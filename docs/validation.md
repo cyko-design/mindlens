@@ -40,3 +40,18 @@ The entire 22-question browser journey, Building timing, Results tabs, accordion
 A language-retention check inspected an HTML `checked` attribute instead of the live input property, so that assertion was inconclusive. The subsequent Previous check confirmed the retained live selected response. Recheck language switching with the live property during acceptance testing.
 
 The private deployment is for owner review; it is not a declaration that public-launch gates or all requested QA have passed. See TODO.md for remaining content and review items.
+
+## Consolidated revision verification, 13 September 2026
+
+The current build implements the user's 21-item consolidated feedback. The following supersedes corresponding incomplete UI checks above:
+
+- Home inspected at 390×844. At 390×667, the Accuracy block begins at y=649.6, within the initial viewport. All three trust descriptions measured three lines at 390px frame width. Home rendered no below-fold cue. Hardware safe-area insets were not simulated.
+- Header Home link successfully returned from Support Me to Home. Question heading computed as 20px / weight 600; reassurance computed at 14px text with 14px line height.
+- Completed all 22 questionnaire answers through the UI with automatic advance. Previous restored the live selected answer; retained Next moved forward. Final Complete Assessment button remained present. The final answer led automatically to Results without clicking the Building completion CTA. The brief Building heading assertion missed its transient state; exact status timing remains code-verified at 2.4 seconds, not separately stopwatch-verified.
+- Score tab opened and displayed 97% for the test responses (Q1 Agree, all remaining responses Strongly agree), matching the deterministic formula.
+- Explore initially showed all seven collapsed. Opening the second after the first left only the second aria-expanded=true.
+- Support GIF display measured 190×91px after transparent-margin clipping. GitHub mark rendered. Overflow-cue background computed rgba(238,232,254,0.65).
+- Footer SVG lettering and revised waves were visually inspected against the supplied references. Footer advice line is absent. Original GIF and Buy Me a Coffee SVG integrity tests still pass.
+- Automated suite: 9 tests pass.
+
+Automatic approval review again blocked browser access due to a usage limit during the smaller-width checks. No browser workaround was attempted. The 375px/320px follow-up measurements, non-overflowing-page cue absence, animation under device Reduced Motion, and real-device safe-area checks remain unverified. The source uses runtime overflow measurements, a Home-only exemption and a questionnaire-scoped reduced-motion override.

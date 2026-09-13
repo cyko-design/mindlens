@@ -93,7 +93,17 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-row">
-        <Logo />
+        <a
+          className="home-logo"
+          href="#home"
+          aria-label="MindLens Home"
+          onClick={(e) => {
+            e.preventDefault();
+            go("home");
+          }}
+        >
+          <Logo />
+        </a>
         <div className="header-utilities">
           <button onClick={() => go("support")}>{t("supportMe")}</button>
           <span aria-hidden="true">|</span>
@@ -146,25 +156,38 @@ export function Waves({ animate = false, className = "" }) {
   return (
     <svg
       className={`waves ${animate ? "ambient" : ""} ${className}`}
-      viewBox="0 0 800 300"
+      viewBox="0 0 910 650"
       preserveAspectRatio="none"
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id={id}>
-          <stop stopColor="#a4e2e9" stopOpacity=".42" />
-          <stop offset="1" stopColor="#c6b6f5" stopOpacity=".55" />
+        <linearGradient id={`${id}-base`} x1="0" y1="0" x2="1" y2=".35">
+          <stop stopColor="#bde9ef" stopOpacity=".45" />
+          <stop offset=".5" stopColor="#c1d8f5" stopOpacity=".5" />
+          <stop offset="1" stopColor="#d7c4f6" stopOpacity=".55" />
+        </linearGradient>
+        <linearGradient id={`${id}-wash`}>
+          <stop stopColor="#99dfe9" stopOpacity=".3" />
+          <stop offset="1" stopColor="#baa4ec" stopOpacity=".3" />
         </linearGradient>
       </defs>
-      <g fill={`url(#${id})`}>
-        <path d="M0 10C200 15 215 270 480 235S690 210 800 260V300H0Z" />
-        <path d="M0 210C240 130 430 130 570 60S700 15 800 0V300H0Z" />
-        <path d="M0 180C210 40 350 100 470 190S650 280 800 240V300H0Z" />
-        <path d="M0 220C150 160 360 180 510 250S700 295 800 265V300H0Z" />
+      <g className="wave-layer wave-back" fill={`url(#${id}-base)`}>
+        <path d="M-70 22C130 62 190 225 410 266S713 153 980-8V670H-70Z" />
+        <path d="M-70 240C105 420 224 455 432 449S752 406 980 522V670H-70Z" />
       </g>
-      <g fill="none" stroke="white" strokeOpacity=".7">
-        <path d="M0 195C160 130 410 315 800 245" />
-        <path d="M0 240C250 180 325 180 530 245S700 295 800 300" />
+      <g className="wave-layer wave-front" fill={`url(#${id}-wash)`}>
+        <path d="M-70 310C120 482 304 500 493 451S730 545 870 607Q943 626 980 590V670H-70Z" />
+        <path d="M-70 513C155 529 212 384 399 407S705 633 980 647V670H-70Z" />
+      </g>
+      <g
+        className="wave-layer wave-lines"
+        fill="none"
+        stroke="white"
+        strokeWidth="1.1"
+        strokeOpacity=".85"
+      >
+        <path d="M-70 397C125 444 278 439 420 377S679 623 980 638" />
+        <path d="M-70 508C106 559 162 388 341 455S463 622 980 555" />
       </g>
     </svg>
   );
@@ -176,13 +199,18 @@ export function Footer({ animate = false }) {
       <Waves animate={animate} />
       <div className="footer-art">
         <span>{t("footerLeft")}</span>
-        <span className="script-art">{t("footerScript")}</span>
+        <img
+          className="script-art"
+          src="/assets/different-minds.svg"
+          width="180"
+          height="185"
+          alt="Different Minds Brighter Lives"
+        />
       </div>
       <div className="footer-legal">
         <p>
           {t("footReflection")} · {t("footDiagnosis")}
         </p>
-        <p>{t("footAdvice")}</p>
         <p>© 2026 MindLens · {t("copyright")}</p>
       </div>
     </footer>

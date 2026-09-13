@@ -467,7 +467,7 @@
     "hero": "ADHD, ASD or Both?",
     "heroText": "A research-informed assessment to help you explore your unique trait profile.",
     "adult": "I am 18 years old or older.",
-    "consent": "I have read and agree to the Terms of Use. I understand that MindLens is a research-informed self-assessment, not a diagnosis, and that I use the results at my own discretion.",
+    "consent": "I have read and agree to the Terms of Use. I understand MindLens is for self-reflection, not diagnosis.",
     "time": "Takes about 10-15 minutes.",
     "learn": "Learn about the research, limitations and what your results can - and cannot - tell you.",
     "question": "Question {n} of 22",
@@ -522,15 +522,15 @@
   "trust": [
     {
       "title": "Research-informed",
-      "text": "Based on established ADHD and autism research."
+      "text": "Based on established ADHD and ASD research."
     },
     {
-      "title": "For self-reflection only",
-      "text": "Designed to help you understand your traits, not diagnose them."
+      "title": "Self-reflection only",
+      "text": "Helps you understand your traits, not diagnose them."
     },
     {
-      "title": "No personal data required",
-      "text": "No account or personal details needed to take the assessment."
+      "title": "No personal data",
+      "text": "No account or personal details needed."
     }
   ],
   "status": [

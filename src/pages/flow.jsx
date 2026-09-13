@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { copyText } from "../domain/clipboard.js";
 import { useApp } from "../hooks/runtime.jsx";
 import { AREAS, band, calculate, validAnswers } from "../domain/scoring.js";
@@ -158,12 +158,19 @@ export function Restart() {
 export function Questionnaire() {
   const { strings, t, session: s, patch, dispatch, go } = useApp();
   const i = s.position;
+  const advanceTimer = useRef(null);
+  useEffect(() => () => clearTimeout(advanceTimer.current), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.querySelector(".questionnaire h1")?.focus({ preventScroll: true });
+  }, [i]);
   const count = s.answers.filter((a) => a !== null).length;
   const progress = Math.round((count / 22) * 100);
   const area = AREAS.findIndex(([start, end]) => i >= start && i < end);
   if (!s.adult || !s.terms) return <Restart />;
   function next() {
-    if (s.answers[i] === null) return;
+    clearTimeout(advanceTimer.current);
+    advanceTimer.current = null;
     if (i < 21) {
       patch({ position: i + 1 });
       window.scrollTo(0, 0);
@@ -192,16 +199,23 @@ export function Questionnaire() {
         {strings.reassurances[Math.min(4, Math.floor(progress / 20))]}
       </p>
       <RadioGroup
+        key={i}
         question={strings.questions[i]}
         value={s.answers[i]}
         responses={strings.responses}
-        onChange={(value) => dispatch({ type: "answer", value })}
+        onChange={(value) => {
+          if (advanceTimer.current) return;
+          dispatch({ type: "answer", value });
+          advanceTimer.current = setTimeout(next, 180);
+        }}
       />
       <div className="question-nav">
         <Button
           secondary
           disabled={i === 0}
           onClick={() => {
+            clearTimeout(advanceTimer.current);
+            advanceTimer.current = null;
             patch({ position: i - 1 });
             window.scrollTo(0, 0);
           }}
@@ -228,8 +242,12 @@ export function Building() {
     );
     return () => clearInterval(timer);
   }, [s.buildingStarted]);
-  if (!s.completed || !validAnswers(s.answers)) return <Restart />;
   const done = elapsed >= 2400;
+  useEffect(() => {
+    if (done && s.completed && validAnswers(s.answers))
+      go("results", { replace: true });
+  }, [done, s.completed, s.answers, go]);
+  if (!s.completed || !validAnswers(s.answers)) return <Restart />;
   return (
     <Page animate className="building">
       <h1 tabIndex="-1">{t("building")}</h1>
@@ -374,12 +392,10 @@ export function Explore() {
               key={i}
               name={area.name}
               level={strings.bands[level]}
-              open={s.openAreas.includes(i)}
+              open={s.openAreas[0] === i}
               onToggle={() =>
                 patch({
-                  openAreas: s.openAreas.includes(i)
-                    ? s.openAreas.filter((n) => n !== i)
-                    : [...s.openAreas, i],
+                  openAreas: s.openAreas[0] === i ? [] : [i],
                 })
               }
             >
@@ -574,19 +590,26 @@ export function Support() {
     <Page className="support">
       <h1 tabIndex="-1">{t("supportMe")}</h1>
       <p className="intro">{strings.support.intro}</p>
-      <img
-        className="thanks-gif"
-        src="/assets/purple_thanks.gif"
-        width="480"
-        height="480"
-        alt=""
-      />
+      <div className="thanks-crop">
+        <img
+          className="thanks-gif"
+          src="/assets/purple_thanks.gif"
+          width="480"
+          height="480"
+          alt=""
+        />
+      </div>
       {strings.support.body.map((p) => (
         <p key={p}>{p}</p>
       ))}
       <Card className="future">
         <span className="icon-disc">
-          <Icon name="code" />
+          <img
+            src="/assets/github-mark.svg"
+            width="25"
+            height="25"
+            alt="GitHub"
+          />
         </span>
         <div>
           <h2>{strings.support.futureTitle}</h2>
