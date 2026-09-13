@@ -55,3 +55,15 @@ The current build implements the user's 21-item consolidated feedback. The follo
 - Automated suite: 9 tests pass.
 
 Automatic approval review again blocked browser access due to a usage limit during the smaller-width checks. No browser workaround was attempted. The 375px/320px follow-up measurements, non-overflowing-page cue absence, animation under device Reduced Motion, and real-device safe-area checks remain unverified. The source uses runtime overflow measurements, a Home-only exemption and a questionnaire-scoped reduced-motion override.
+
+## Wave animation repair and direct verification
+
+The prior revision had a desktop stacking defect: `.desktop > .waves` used z-index -1 and was painted behind the opaque body background. CSS animation was running but the artwork itself was invisible. The repair places artwork at layer 0 and handoff/copyright content at layer 1.
+
+The former 16/18/20-second alternate animations required 32/36/40 seconds for a full cycle and produced overly faint movement. Shared wave layers now complete full cycles in 16/18/20 seconds, start at offset phases, and combine 6% horizontal travel with anchored vertical scaling. Questionnaire-only Reduced Motion handling is unchanged.
+
+Direct browser verification after the fix:
+
+- Home footer: compared screenshots four seconds apart. Back-wave transform changed from matrix(1.04, 0, 0, 1.07838, 14.4735, 0) to matrix(1.04, 0, 0, 1.09637, 28.6409, 0). Visible wave contours moved while footer lettering and legal text stayed fixed.
+- Desktop handoff: full screenshot confirmed visible waves at the bottom. Four-second comparison changed the back-wave transform from matrix(1.04, 0, 0, 1.06212, 1.67196, 0) to matrix(1.04, 0, 0, 1.0999, 31.4202, 0). Both screenshots showed the expected changing contours.
+- Building uses the same animated component, but its transient 2.4-second flow was not independently replayed during this narrowly scoped repair.

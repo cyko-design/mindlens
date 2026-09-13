@@ -332,21 +332,24 @@ h1:focus {
 .ambient .wave-layer {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: drift 16s ease-in-out infinite alternate;
+  animation: drift 16s ease-in-out -4s infinite;
 }
 .ambient .wave-front {
   animation-duration: 18s;
-  animation-direction: alternate-reverse;
+  animation-delay: -9s;
+  animation-direction: reverse;
 }
 .ambient .wave-lines {
   animation-duration: 20s;
+  animation-delay: -6s;
 }
 @keyframes drift {
-  from {
-    transform: translate(-1.5%, 0) scaleX(1.04);
+  0%,
+  100% {
+    transform: translateX(-3%) scale(1.04, 1.02);
   }
-  to {
-    transform: translate(1.5%, -1.2%) scaleX(1.04);
+  50% {
+    transform: translateX(3%) scale(1.04, 1.1);
   }
 }
 .home h1 {
@@ -1081,9 +1084,11 @@ p.reassurance {
   bottom: 0;
   width: 100%;
   height: 240px;
-  z-index: -1;
+  z-index: 0;
 }
 .handoff {
+  position: relative;
+  z-index: 1;
   text-align: center;
   max-width: 600px;
 }
@@ -1122,6 +1127,7 @@ p.reassurance {
   overflow-wrap: anywhere;
 }
 .desktop-copyright {
+  z-index: 1;
   position: absolute;
   bottom: 22px;
   font-size: 12px;
