@@ -1170,9 +1170,10 @@ h1:focus {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *:before,
-  *:after {
+  .questionnaire,
+  .questionnaire *,
+  .questionnaire *::before,
+  .questionnaire *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

@@ -16,3 +16,7 @@ Assessment answers, consent, position, completion and view state live in memory 
 Routes: Home, Terms, Accuracy, Questionnaire, Building, Results, Explore, Together, Professional Support, Support Me. Secondary Back uses browser history within the app, with a safe Home fallback for a direct entry. Desktop mounts only the bilingual handoff. Mobile layouts use content sizing and safe-area insets.
 
 Quality gates: deterministic score/boundary/invalid-state tests; locale key parity and approved data checks; end-to-end UI tests across mobile widths/heights, language, navigation, consent, retake and desktop; production build.
+
+## Motion policy clarification
+
+The user clarified that Reduced Motion applies only to questionnaire screens. Its CSS override is scoped to `.questionnaire`. Home, Building Profile and desktop handoff retain approved artwork motion; Support Me always displays the unchanged supplied GIF. Other screens remain static.

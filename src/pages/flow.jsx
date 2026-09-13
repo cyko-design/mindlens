@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { copyText } from "../domain/clipboard.js";
-import { useApp, useMedia } from "../hooks/runtime.jsx";
+import { useApp } from "../hooks/runtime.jsx";
 import { AREAS, band, calculate, validAnswers } from "../domain/scoring.js";
 import {
   Button,
@@ -570,20 +570,17 @@ export function Professional() {
 }
 export function Support() {
   const { strings, t } = useApp();
-  const reduced = useMedia("(prefers-reduced-motion: reduce)");
   return (
     <Page className="support">
       <h1 tabIndex="-1">{t("supportMe")}</h1>
       <p className="intro">{strings.support.intro}</p>
-      {!reduced && (
-        <img
-          className="thanks-gif"
-          src="/assets/purple_thanks.gif"
-          width="480"
-          height="480"
-          alt=""
-        />
-      )}
+      <img
+        className="thanks-gif"
+        src="/assets/purple_thanks.gif"
+        width="480"
+        height="480"
+        alt=""
+      />
       {strings.support.body.map((p) => (
         <p key={p}>{p}</p>
       ))}
