@@ -67,3 +67,11 @@ Direct browser verification after the fix:
 - Home footer: compared screenshots four seconds apart. Back-wave transform changed from matrix(1.04, 0, 0, 1.07838, 14.4735, 0) to matrix(1.04, 0, 0, 1.09637, 28.6409, 0). Visible wave contours moved while footer lettering and legal text stayed fixed.
 - Desktop handoff: full screenshot confirmed visible waves at the bottom. Four-second comparison changed the back-wave transform from matrix(1.04, 0, 0, 1.06212, 1.67196, 0) to matrix(1.04, 0, 0, 1.0999, 31.4202, 0). Both screenshots showed the expected changing contours.
 - Building uses the same animated component, but its transient 2.4-second flow was not independently replayed during this narrowly scoped repair.
+
+## Latest typography, Home and profile refinements
+
+- Question text is 20px / weight 500; computed weight verified in browser. Home trait graphic occupies approximately half its previous area. Infinity strokes remain inside the SVG bounds.
+- Home trust descriptions match the latest requested text; checkbox containers have a 36px minimum height.
+- Building Profile uses distinct crossing-wave paths with a soft lower fade, sharing the footer motion classes. Visual inspection and differing computed transforms confirmed movement.
+- Sequence duration is now 1,200ms total, with three 400ms status intervals. A fresh browser run answered all 22 questions and reached Results automatically, then verified the expected 75% score for all Agree answers. Exact timing is code-verified.
+- GitHub Pages launch remains deferred until bugs are resolved and the owner makes the repository public.

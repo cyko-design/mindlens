@@ -360,7 +360,7 @@ h1:focus {
 }
 .hero-venn {
   position: relative;
-  width: min(84%, 300px);
+  width: min(59.4%, 212px);
   aspect-ratio: 1.55;
   margin: 8px auto 12px;
   isolation: isolate;
@@ -565,7 +565,7 @@ h1:focus {
 }
 .questionnaire h1 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.6px;
 }
@@ -1207,7 +1207,7 @@ p.reassurance {
 }
 
 .check {
-  min-height: 44px;
+  min-height: 36px;
   align-items: flex-start;
 }
 .check > span,
@@ -1231,7 +1231,7 @@ p.reassurance {
 }
 @media (max-height: 740px) {
   .home .hero-venn {
-    width: min(76%, 270px);
+    width: min(53.7%, 191px);
     margin-block: 4px 8px;
   }
   .home .trust {
@@ -1256,7 +1256,7 @@ p.reassurance {
 }
 @media (max-height: 700px) {
   .home .hero-venn {
-    width: min(70%, 235px);
+    width: min(49.5%, 166px);
   }
   .home .check {
     margin-block: 4px;
@@ -1269,4 +1269,23 @@ p.reassurance {
     height: 28px;
     margin-bottom: 4px;
   }
+}
+
+.home .venn-label {
+  top: 20%;
+  gap: 3px;
+}
+.home .venn-label.centre {
+  top: 40%;
+}
+.home .venn-label svg {
+  width: 18px;
+  height: 18px;
+}
+.home .venn-label strong {
+  font-size: 14px;
+}
+.home .venn-label span {
+  font-size: 11px;
+  line-height: 1.15;
 }

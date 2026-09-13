@@ -49,7 +49,7 @@ export function Icon({ name = "arrow", ...props }) {
       </>
     ),
     infinity: (
-      <path d="M12 12C7-1-5 6 2 15c5 6 9-2 10-3 5-13 17-6 10 3-5 6-9-2-10-3Z" />
+      <path d="M12 12C9 7 7 5 4.5 6C1.5 7 1.5 17 4.5 18C7 19 9 17 12 12C15 7 17 5 19.5 6C22.5 7 22.5 17 19.5 18C17 19 15 17 12 12Z" />
     ),
     brain: (
       <>
@@ -151,8 +151,68 @@ export function Button({
 export function Card({ children, tone = "", className = "" }) {
   return <section className={`card ${tone} ${className}`}>{children}</section>;
 }
-export function Waves({ animate = false, className = "" }) {
+export function Waves({ animate = false, className = "", variant = "footer" }) {
   const id = useId();
+  if (variant === "profile")
+    return (
+      <svg
+        className={`waves profile-art ${animate ? "ambient" : ""} ${className}`}
+        viewBox="0 -100 910 750"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id={`${id}-cyan`} x2="0" y2="1">
+            <stop stopColor="#a5deeb" stopOpacity=".5" />
+            <stop offset="1" stopColor="#bbdcec" stopOpacity=".15" />
+          </linearGradient>
+          <linearGradient id={`${id}-violet`} x2="0" y2="1">
+            <stop stopColor="#d6bbed" stopOpacity=".45" />
+            <stop offset="1" stopColor="#b5bdef" stopOpacity=".2" />
+          </linearGradient>
+          <linearGradient id={`${id}-fade`} x2="0" y2="1">
+            <stop offset=".6" stopColor="white" />
+            <stop offset="1" stopColor="black" />
+          </linearGradient>
+          <mask
+            id={`${id}-mask`}
+            maskUnits="userSpaceOnUse"
+            x="-70"
+            y="-100"
+            width="1050"
+            height="750"
+          >
+            <rect
+              x="-70"
+              y="-100"
+              width="1050"
+              height="750"
+              fill={`url(#${id}-fade)`}
+            />
+          </mask>
+        </defs>
+        <g mask={`url(#${id}-mask)`}>
+          <g className="wave-layer wave-back" fill={`url(#${id}-cyan)`}>
+            <path d="M-70 85C100-15 190 35 350 190S665 520 980 560V690H-70Z" />
+            <path d="M-70 220C120 150 190 280 380 405S715 590 980 450V690H-70Z" />
+          </g>
+          <g className="wave-layer wave-front" fill={`url(#${id}-violet)`}>
+            <path d="M-70 460C175 310 305 380 465 200S740-15 980 95V690H-70Z" />
+            <path d="M-70 560C170 560 270 390 455 320S785 440 980 380V690H-70Z" />
+          </g>
+          <g
+            className="wave-layer wave-lines"
+            fill="none"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeOpacity=".7"
+          >
+            <path d="M-70 160C150 40 210 220 400 400S680 595 980 465" />
+            <path d="M-70 500C170 615 355 540 500 350S740 30 980 135" />
+          </g>
+        </g>
+      </svg>
+    );
   return (
     <svg
       className={`waves ${animate ? "ambient" : ""} ${className}`}

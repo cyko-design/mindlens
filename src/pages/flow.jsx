@@ -242,7 +242,7 @@ export function Building() {
     );
     return () => clearInterval(timer);
   }, [s.buildingStarted]);
-  const done = elapsed >= 2400;
+  const done = elapsed >= 1200;
   useEffect(() => {
     if (done && s.completed && validAnswers(s.answers))
       go("results", { replace: true });
@@ -252,11 +252,11 @@ export function Building() {
     <Page animate className="building">
       <h1 tabIndex="-1">{t("building")}</h1>
       <p className="intro">{t("buildingText")}</p>
-      <Waves animate className="building-waves" />
+      <Waves animate variant="profile" className="building-waves" />
       <div className="status" role="status" aria-live="polite">
         {!done && (
           <>
-            <p>{strings.status[Math.min(2, Math.floor(elapsed / 800))]}</p>
+            <p>{strings.status[Math.min(2, Math.floor(elapsed / 400))]}</p>
             <p className="muted">{t("moment")}</p>
           </>
         )}

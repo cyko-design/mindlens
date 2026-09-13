@@ -42,3 +42,7 @@ The original high-resolution screen references are not served as UI. The applica
 ## Hosting
 
 The optional `.openai/hosting.json` associates a private Sites deployment. GitHub remains the application code source of truth; Sites receives a deployment copy of the same application. Preserve both repository identity and deployment project identity in later edits.
+
+## Future GitHub Pages launch
+
+The intended eventual production host is GitHub Pages. Do not enable Pages or make the repository public until the owner confirms the bugs are resolved and explicitly authorises public release. The current Sites deployment remains a private review environment. Before that move, configure and verify Vite's base path and asset/canonical links for the chosen Pages URL.
