@@ -302,7 +302,7 @@ export function Results() {
                 <Card key={i} tone={i ? "violet" : "teal"}>
                   <Icon name={i ? "infinity" : "brain"} />
                   <div>
-                    <span>{strings.results[i + 1].name}</span>
+                    <span>{strings.traitCardLabels[i]}</span>
                     <strong>{strings.bands[band(value)]}</strong>
                   </div>
                 </Card>

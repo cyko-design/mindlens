@@ -39,6 +39,8 @@ test("all four Results titles and graphic states share the final classification"
       const html = renderToStaticMarkup(
         React.createElement(Runtime, null, React.createElement(Results)),
       );
+      assert.ok(html.includes("ADHD traits"));
+      assert.ok(html.includes("ASD traits"));
       assert.ok(html.includes(`data-classification="${classification}"`));
       assert.ok(
         html.includes(

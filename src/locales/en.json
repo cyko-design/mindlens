@@ -572,5 +572,6 @@
     "Osaka",
     "Seoul"
   ],
-  "regions": ["Mainland China", "Hong Kong", "Taipei"]
+  "regions": ["Mainland China", "Hong Kong", "Taipei"],
+  "traitCardLabels": ["ADHD traits", "ASD traits"]
 }
