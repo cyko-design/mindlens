@@ -88,6 +88,48 @@ export function Logo({ circlesOnly = false }) {
     </span>
   );
 }
+export function ResultGraphic({ classification }) {
+  const adhdActive = classification === 1 || classification === 3;
+  const asdActive = classification === 2 || classification === 3;
+  return (
+    <div
+      className="result-graphic"
+      data-classification={classification}
+      aria-hidden="true"
+    >
+      <svg className="result-circles" viewBox="0 0 72 46">
+        <circle
+          cx="25"
+          cy="23"
+          r="23"
+          fill="#88d2dc"
+          fillOpacity={adhdActive ? 0.65 : 0.2}
+        />
+        <circle
+          cx="48"
+          cy="23"
+          r="23"
+          fill="#b49be9"
+          fillOpacity={asdActive ? 0.65 : 0.2}
+        />
+      </svg>
+      <span
+        className="result-trait result-trait-adhd"
+        data-emphasis={adhdActive ? "strong" : "subdued"}
+      >
+        <Icon name="brain" />
+        <span>ADHD</span>
+      </span>
+      <span
+        className="result-trait result-trait-asd"
+        data-emphasis={asdActive ? "strong" : "subdued"}
+      >
+        <Icon name="infinity" />
+        <span>ASD</span>
+      </span>
+    </div>
+  );
+}
 export function Header() {
   const { t, locale, toggleLocale, go } = useApp();
   return (

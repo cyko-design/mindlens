@@ -7,6 +7,7 @@ import {
   Page,
   Card,
   Logo,
+  ResultGraphic,
   Icon,
   Waves,
   Tabs,
@@ -291,7 +292,7 @@ export function Results() {
           <>
             <div className="open-result">
               <p className="eyebrow">{t("yourResult")}</p>
-              <Logo circlesOnly />
+              <ResultGraphic classification={score.classification} />
               <h1 tabIndex="-1">
                 {strings.results[score.classification].name}
               </h1>

@@ -698,7 +698,8 @@ p.reassurance {
   margin: auto;
 }
 .open-result h1 {
-  font-size: 28px;
+  font-size: 20px;
+  font-weight: 500;
   max-width: 330px;
   margin: 0 auto;
 }
@@ -1288,4 +1289,43 @@ p.reassurance {
 .home .venn-label span {
   font-size: 11px;
   line-height: 1.15;
+}
+
+.result-graphic {
+  position: relative;
+  width: 126px;
+  aspect-ratio: 72 / 46;
+  margin: 0 auto 25px;
+}
+.result-circles {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.result-trait {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.result-trait-adhd {
+  left: 34.7222%;
+}
+.result-trait-asd {
+  left: 66.6667%;
+}
+.result-trait svg {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}
+.result-trait[data-emphasis="subdued"] {
+  opacity: 0.5;
 }
