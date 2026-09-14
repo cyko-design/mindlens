@@ -276,7 +276,7 @@ export function Results() {
   const score = calculate(s.answers);
   const level = band(score.combined);
   return (
-    <Page className="results">
+    <Page className={s.resultTab === 0 ? "results results-your" : "results"}>
       <div className="page-label">{t("results")}</div>
       <Tabs
         labels={[t("yourResult"), t("score")]}
@@ -364,6 +364,7 @@ export function Results() {
         </Button>
         <Button
           secondary
+          arrow={s.resultTab === 0}
           onClick={() => {
             dispatch({ type: "retake" });
             go("home");

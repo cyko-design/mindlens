@@ -75,3 +75,7 @@ Direct browser verification after the fix:
 - Building Profile uses distinct crossing-wave paths with a soft lower fade, sharing the footer motion classes. Visual inspection and differing computed transforms confirmed movement.
 - Sequence duration is now 1,200ms total, with three 400ms status intervals. A fresh browser run answered all 22 questions and reached Results automatically, then verified the expected 75% score for all Agree answers. Exact timing is code-verified.
 - GitHub Pages launch remains deferred until bugs are resolved and the owner makes the repository public.
+
+## Results layout reference 37:2
+
+Used the user-authorised Figma Results reference for the Your result layout: wider graphic label separation and shared AuDHD label, horizontal icon/text trait cards, compact spacing and scoped surface/button treatments. Existing 20px/500 title, result classifications and copy remain intact. Figma asset downloads timed out; existing production glyphs and artwork are retained. Browser review at 320px and 390px exposed button wrapping, corrected with content-safe minimum widths. Score tab was opened and returned the expected 75%. All four classification render tests pass.

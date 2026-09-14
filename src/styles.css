@@ -1333,3 +1333,151 @@ p.reassurance {
 .result-trait[data-emphasis="subdued"] {
   opacity: 0.5;
 }
+
+/* Results reference 37:2: scoped to Your result, not the Score tab. */
+:root:has(.results-your) {
+  --page-bg: #f8fafd;
+  background: var(--page-bg);
+}
+.results-your {
+  --ink: #09103d;
+  --muted: #626d90;
+  color: var(--ink);
+}
+.results-your .tabs {
+  border-radius: 12px;
+  background: #f6f5fc;
+}
+.results-your .tabs > button[aria-selected="true"] {
+  background: #e5dbfa;
+}
+.results-your .open-result {
+  padding: 0 0 14px;
+}
+.results-your .eyebrow {
+  margin: 14px 0;
+  color: #7a5cd9;
+}
+.results-your .result-graphic {
+  width: min(56%, 184px);
+  margin-bottom: 14px;
+}
+.results-your .result-trait {
+  font-size: 10px;
+  gap: 4px;
+}
+.results-your .result-trait-adhd {
+  left: 23.25%;
+}
+.results-your .result-trait-asd {
+  left: 73.65%;
+}
+.results-your .result-trait svg {
+  width: 18px;
+  height: 18px;
+}
+.result-shared {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.result-shared[data-emphasis="subdued"] {
+  opacity: 0.35;
+}
+.results-your .dimension-rows {
+  gap: 16px;
+  margin: 0 0 16px;
+}
+.results-your .dimension-rows .card {
+  flex-direction: row;
+  justify-content: center;
+  text-align: left;
+  gap: 10px;
+  padding: 12px 10px;
+  border-radius: 12px;
+}
+.results-your .dimension-rows .card > div {
+  min-width: 0;
+}
+.results-your .dimension-rows .card span {
+  font-size: 14px;
+}
+.results-your .dimension-rows strong {
+  margin-top: 3px;
+  color: #7a5cd9;
+  font-weight: 500;
+}
+.results-your .dimension-rows svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.results-your .dimension-rows .teal {
+  background: #f0fbfd;
+  border-color: #c7e5ed;
+}
+.results-your .dimension-rows .violet {
+  background: #f9f4fe;
+  border-color: #e0d6f5;
+}
+.results-your .dimension-rows .teal svg {
+  color: #20abc3;
+}
+.results-your .dimension-rows .violet svg {
+  color: #8a63d7;
+}
+.results-your .meaning {
+  padding: 18px 16px;
+  gap: 14px;
+  border-radius: 12px;
+  background: #fcfcfe;
+  border-color: #dee3f0;
+}
+.results-your .meaning > svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 20px;
+}
+.results-your .meaning h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.results-your .meaning p {
+  line-height: 1.4;
+}
+.results-your .actions {
+  gap: 14px;
+  margin-top: 18px;
+}
+.results-your .actions > .button {
+  background: #8063d6;
+  width: 72%;
+}
+.results-your .actions > .secondary {
+  width: 60%;
+}
+@media (max-width: 359px) {
+  .results-your .dimension-rows {
+    gap: 10px;
+  }
+  .results-your .dimension-rows .card {
+    gap: 6px;
+    padding-inline: 8px;
+  }
+  .results-your .dimension-rows svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.results-your .actions > .button {
+  min-width: min(100%, 250px);
+}
+.results-your .actions > .secondary {
+  min-width: min(100%, 220px);
+}

@@ -127,6 +127,12 @@ export function ResultGraphic({ classification }) {
         <Icon name="infinity" />
         <span>ASD</span>
       </span>
+      <span
+        className="result-shared"
+        data-emphasis={classification === 3 ? "strong" : "subdued"}
+      >
+        AuDHD
+      </span>
     </div>
   );
 }
