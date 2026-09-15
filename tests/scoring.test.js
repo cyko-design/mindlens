@@ -79,7 +79,7 @@ test("session corruption and incoherent completion restart safely", () => {
   s.buildingStarted = Date.now();
   assert.equal(restoreSession(JSON.stringify(s)).completed, true);
 });
-test("editing invalidates completion and retake clears consent, answers and results", () => {
+test("editing invalidates completion and retake clears assessment but preserves eligibility", () => {
   const s = {
     ...initialSession(),
     adult: true,
@@ -91,7 +91,7 @@ test("editing invalidates completion and retake clears consent, answers and resu
     resultTab: 1,
   };
   assert.equal(reducer(s, { type: "answer", value: 0 }).completed, false);
-  assert.deepEqual(reducer(s, { type: "retake" }), initialSession());
+  assert.deepEqual(reducer(s, { type: "retake" }), {...initialSession(), adult: true, terms: true});
   assert.equal(
     reducer(initialSession(), { type: "complete" }).completed,
     false,

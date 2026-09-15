@@ -74,6 +74,7 @@ export function Runtime({ children }) {
       );
     const pop = () => {
       scrollRestore.current = history.state?.scroll || 0;
+      if (currentRoute() === "questionnaire") dispatch({ type: "review" });
       setRoute(currentRoute());
       setEntry((e) => e + 1);
     };
@@ -93,6 +94,7 @@ export function Runtime({ children }) {
     return () => cancelAnimationFrame(id);
   }, [route, entry]);
   function go(next, { replace = false } = {}) {
+    if (next === "questionnaire") dispatch({ type: "review" });
     history.replaceState({ ...history.state, scroll: window.scrollY }, "");
     const data = {
       mindlens: true,
@@ -145,21 +147,12 @@ export function useOverflow(ref, disabled) {
     const measure = () => {
       const el = ref.current;
       const viewport = window.visualViewport?.height || innerHeight;
-      const footer = el?.closest(".mobile-app")?.querySelector(".footer-legal");
-      const bottom =
-        Math.max(
-          el?.getBoundingClientRect().bottom || 0,
-          footer?.getBoundingClientRect().bottom || 0,
-        ) + scrollY;
+      const bottom = (el?.getBoundingClientRect().bottom || 0) + scrollY;
       setShow(bottom > viewport + 2 && scrollY < 48);
     };
     const ro = new ResizeObserver(measure);
     if (ref.current) {
       ro.observe(ref.current);
-      const footer = ref.current
-        .closest(".mobile-app")
-        ?.querySelector(".footer");
-      if (footer) ro.observe(footer);
     }
     addEventListener("scroll", measure, { passive: true });
     addEventListener("resize", measure);

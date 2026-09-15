@@ -4,6 +4,9 @@ import { useApp } from "../hooks/runtime.jsx";
 import { AREAS, band, calculate, validAnswers } from "../domain/scoring.js";
 import {
   Button,
+  PageTitle,
+  ResultsShell,
+  TraitCard,
   Page,
   Card,
   Logo,
@@ -27,11 +30,10 @@ export function Home() {
   const parts = terms.split(termName);
   return (
     <Page home animate className="home">
-      <h1 tabIndex="-1">{t("hero")}</h1>
+      <PageTitle>{t("hero")}</PageTitle>
       <p className="intro">{t("heroText")}</p>
       <div className="hero-venn">
-        <div className="venn-circle teal" />
-        <div className="venn-circle violet" />
+        <img className="home-circles" src="/assets/home-venn.svg" alt="" />
         <div className="venn-label left">
           <Icon name="brain" />
           <strong>ADHD</strong>
@@ -143,7 +145,7 @@ export function Restart() {
   const { t, dispatch, go } = useApp();
   return (
     <Page>
-      <h1 tabIndex="-1">{t("restartTitle")}</h1>
+      <PageTitle>{t("restartTitle")}</PageTitle>
       <p>{t("restartText")}</p>
       <Button
         onClick={() => {
@@ -165,8 +167,10 @@ export function Questionnaire() {
     window.scrollTo(0, 0);
     document.querySelector(".questionnaire h1")?.focus({ preventScroll: true });
   }, [i]);
-  const count = s.answers.filter((a) => a !== null).length;
-  const progress = Math.round((count / 22) * 100);
+  const progress = Math.round((i / 22) * 100);
+  useEffect(() => {
+    dispatch({ type: "review" });
+  }, [dispatch]);
   const area = AREAS.findIndex(([start, end]) => i >= start && i < end);
   if (!s.adult || !s.terms) return <Restart />;
   function next() {
@@ -186,7 +190,7 @@ export function Questionnaire() {
         <span>{t("question", i + 1)}</span>
         <span>{t("progress", progress)}</span>
       </div>
-      <progress max="22" value={count} aria-label={t("progress", progress)} />
+      <progress max="22" value={i} aria-label={t("progress", progress)} />
       <p className="section-label">{strings.areas[area].name}</p>
       {i === 0 && (
         <div className="framing">
@@ -195,7 +199,7 @@ export function Questionnaire() {
           ))}
         </div>
       )}
-      <h1 tabIndex="-1">{strings.questions[i]}</h1>
+      <PageTitle>{strings.questions[i]}</PageTitle>
       <p className="reassurance">
         {strings.reassurances[Math.min(4, Math.floor(progress / 20))]}
       </p>
@@ -207,7 +211,7 @@ export function Questionnaire() {
         onChange={(value) => {
           if (advanceTimer.current) return;
           dispatch({ type: "answer", value });
-          advanceTimer.current = setTimeout(next, 180);
+          if (i < 21) advanceTimer.current = setTimeout(next, 180);
         }}
       />
       <div className="question-nav">
@@ -249,23 +253,27 @@ export function Building() {
       go("results", { replace: true });
   }, [done, s.completed, s.answers, go]);
   if (!s.completed || !validAnswers(s.answers)) return <Restart />;
+  return <BuildingContent elapsed={elapsed} />;
+}
+export function BuildingContent({ elapsed }) {
+  const { strings, t } = useApp();
   return (
     <Page animate className="building">
-      <h1 tabIndex="-1">{t("building")}</h1>
+      <PageTitle>{t("building")}</PageTitle>
       <p className="intro">{t("buildingText")}</p>
-      <Waves animate variant="profile" className="building-waves" />
+      <div className="profile-illustration">
+        <img
+          className="profile-brain"
+          src="/assets/profile-brain.svg"
+          width="58"
+          height="58"
+          alt=""
+        />
+        <Waves animate variant="profile" className="building-waves" />
+      </div>
       <div className="status" role="status" aria-live="polite">
-        {!done && (
-          <>
-            <p>{strings.status[Math.min(2, Math.floor(elapsed / 400))]}</p>
-            <p className="muted">{t("moment")}</p>
-          </>
-        )}
-        {done && (
-          <Button arrow onClick={() => go("results")}>
-            {t("viewResults")}
-          </Button>
-        )}
+        <p>{strings.status[Math.min(2, Math.floor(elapsed / 400))]}</p>
+        <p className="muted">{t("moment")}</p>
       </div>
     </Page>
   );
@@ -276,8 +284,7 @@ export function Results() {
   const score = calculate(s.answers);
   const level = band(score.combined);
   return (
-    <Page className={s.resultTab === 0 ? "results results-your" : "results"}>
-      <div className="page-label">{t("results")}</div>
+    <ResultsShell>
       <Tabs
         labels={[t("yourResult"), t("score")]}
         label={t("results")}
@@ -293,19 +300,18 @@ export function Results() {
             <div className="open-result">
               <p className="eyebrow">{t("yourResult")}</p>
               <ResultGraphic classification={score.classification} />
-              <h1 tabIndex="-1">
+              <PageTitle as="h2">
                 {strings.results[score.classification].name}
-              </h1>
+              </PageTitle>
             </div>
             <div className="dimension-rows">
               {[score.adhd, score.asd].map((value, i) => (
-                <Card key={i} tone={i ? "violet" : "teal"}>
-                  <Icon name={i ? "infinity" : "brain"} />
-                  <div>
-                    <span>{strings.traitCardLabels[i]}</span>
-                    <strong>{strings.bands[band(value)]}</strong>
-                  </div>
-                </Card>
+                <TraitCard
+                  key={i}
+                  type={i ? "asd" : "adhd"}
+                  label={strings.traitCardLabels[i]}
+                  level={strings.bands[band(value)]}
+                />
               ))}
             </div>
             <Card className="meaning">
@@ -319,7 +325,7 @@ export function Results() {
         ) : (
           <>
             <div className="open-score">
-              <h1 tabIndex="-1">{t("combined")}</h1>
+              <PageTitle as="h2">{t("combined")}</PageTitle>
               <div
                 className="donut"
                 role="img"
@@ -351,10 +357,13 @@ export function Results() {
               <h2>{strings.indications[level]}</h2>
               {strings.scoreTexts[level] && <p>{strings.scoreTexts[level]}</p>}
             </div>
-            <section className="about-score">
-              <h2>{t("aboutScore")}</h2>
-              <p>{t("reassurance")}</p>
-            </section>
+            <Card className="meaning">
+              <Icon name="info" />
+              <div>
+                <h2>{t("aboutScore")}</h2>
+                <p>{t("reassurance")}</p>
+              </div>
+            </Card>
           </>
         )}
       </div>
@@ -364,17 +373,17 @@ export function Results() {
         </Button>
         <Button
           secondary
-          arrow={s.resultTab === 0}
+          arrow={false}
           onClick={() => {
             dispatch({ type: "retake" });
-            go("home");
+            go("questionnaire");
           }}
         >
           {t("retake")}
         </Button>
       </div>
       <p className="result-reassurance">{t("reassurance")}</p>
-    </Page>
+    </ResultsShell>
   );
 }
 export function Explore() {
@@ -383,7 +392,7 @@ export function Explore() {
   const scores = calculate(s.answers);
   return (
     <Page>
-      <h1 tabIndex="-1">{t("explore")}</h1>
+      <PageTitle>{t("explore")}</PageTitle>
       <p className="intro">{t("exploreIntro")}</p>
       <div className="accordions">
         {strings.areas.map((area, i) => {
@@ -426,7 +435,7 @@ export function Together() {
   const classification = calculate(s.answers).classification;
   return (
     <Page>
-      <h1 tabIndex="-1">{t("together")}</h1>
+      <PageTitle>{t("together")}</PageTitle>
       <p className="intro">{t("togetherIntro")}</p>
       <div className="summary-cards">
         {strings.summaries[classification].map((item, i) => (
@@ -506,11 +515,12 @@ export function Professional() {
           );
   return (
     <Page className="professional">
-      <h1 tabIndex="-1">{t("professional")}</h1>
+      <PageTitle>{t("professional")}</PageTitle>
       <p className="intro">{t("supportIntro")}</p>
       <h2>{t("looking")}</h2>
       <Tabs
         labels={strings.supportTypes}
+        variant="support"
         label={t("looking")}
         value={s.supportType}
         onChange={(supportType) => patch({ supportType })}
@@ -590,7 +600,7 @@ export function Support() {
   const { strings, t } = useApp();
   return (
     <Page className="support">
-      <h1 tabIndex="-1">{t("supportMe")}</h1>
+      <PageTitle>{t("supportMe")}</PageTitle>
       <p className="intro">{strings.support.intro}</p>
       <div className="thanks-crop">
         <img
@@ -697,8 +707,7 @@ export function Desktop() {
         <p className="canonical">{url}</p>
         <p role="status">{copy}</p>
       </main>
-      <Waves animate />
-      <div className="desktop-copyright">© 2026 MindLens</div>
+      <Footer animate desktop />
     </div>
   );
 }

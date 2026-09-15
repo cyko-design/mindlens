@@ -144,7 +144,7 @@ export function Header() {
         <a
           className="home-logo"
           href="#home"
-          aria-label="MindLens Home"
+          aria-label={`MindLens · ${t("home")}`}
           onClick={(e) => {
             e.preventDefault();
             go("home");
@@ -199,119 +199,60 @@ export function Button({
 export function Card({ children, tone = "", className = "" }) {
   return <section className={`card ${tone} ${className}`}>{children}</section>;
 }
+// Artwork is exported verbatim from Figma; motion only translates its container.
 export function Waves({ animate = false, className = "", variant = "footer" }) {
-  const id = useId();
-  if (variant === "profile")
-    return (
-      <svg
-        className={`waves profile-art ${animate ? "ambient" : ""} ${className}`}
-        viewBox="0 -100 910 750"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id={`${id}-cyan`} x2="0" y2="1">
-            <stop stopColor="#a5deeb" stopOpacity=".5" />
-            <stop offset="1" stopColor="#bbdcec" stopOpacity=".15" />
-          </linearGradient>
-          <linearGradient id={`${id}-violet`} x2="0" y2="1">
-            <stop stopColor="#d6bbed" stopOpacity=".45" />
-            <stop offset="1" stopColor="#b5bdef" stopOpacity=".2" />
-          </linearGradient>
-          <linearGradient id={`${id}-fade`} x2="0" y2="1">
-            <stop offset=".6" stopColor="white" />
-            <stop offset="1" stopColor="black" />
-          </linearGradient>
-          <mask
-            id={`${id}-mask`}
-            maskUnits="userSpaceOnUse"
-            x="-70"
-            y="-100"
-            width="1050"
-            height="750"
-          >
-            <rect
-              x="-70"
-              y="-100"
-              width="1050"
-              height="750"
-              fill={`url(#${id}-fade)`}
-            />
-          </mask>
-        </defs>
-        <g mask={`url(#${id}-mask)`}>
-          <g className="wave-layer wave-back" fill={`url(#${id}-cyan)`}>
-            <path d="M-70 85C100-15 190 35 350 190S665 520 980 560V690H-70Z" />
-            <path d="M-70 220C120 150 190 280 380 405S715 590 980 450V690H-70Z" />
-          </g>
-          <g className="wave-layer wave-front" fill={`url(#${id}-violet)`}>
-            <path d="M-70 460C175 310 305 380 465 200S740-15 980 95V690H-70Z" />
-            <path d="M-70 560C170 560 270 390 455 320S785 440 980 380V690H-70Z" />
-          </g>
-          <g
-            className="wave-layer wave-lines"
-            fill="none"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeOpacity=".7"
-          >
-            <path d="M-70 160C150 40 210 220 400 400S680 595 980 465" />
-            <path d="M-70 500C170 615 355 540 500 350S740 30 980 135" />
-          </g>
-        </g>
-      </svg>
-    );
   return (
-    <svg
+    <div
       className={`waves ${animate ? "ambient" : ""} ${className}`}
-      viewBox="0 0 910 650"
-      preserveAspectRatio="none"
       aria-hidden="true"
     >
-      <defs>
-        <linearGradient id={`${id}-base`} x1="0" y1="0" x2="1" y2=".35">
-          <stop stopColor="#bde9ef" stopOpacity=".45" />
-          <stop offset=".5" stopColor="#c1d8f5" stopOpacity=".5" />
-          <stop offset="1" stopColor="#d7c4f6" stopOpacity=".55" />
-        </linearGradient>
-        <linearGradient id={`${id}-wash`}>
-          <stop stopColor="#99dfe9" stopOpacity=".3" />
-          <stop offset="1" stopColor="#baa4ec" stopOpacity=".3" />
-        </linearGradient>
-      </defs>
-      <g className="wave-layer wave-back" fill={`url(#${id}-base)`}>
-        <path d="M-70 22C130 62 190 225 410 266S713 153 980-8V670H-70Z" />
-        <path d="M-70 240C105 420 224 455 432 449S752 406 980 522V670H-70Z" />
-      </g>
-      <g className="wave-layer wave-front" fill={`url(#${id}-wash)`}>
-        <path d="M-70 310C120 482 304 500 493 451S730 545 870 607Q943 626 980 590V670H-70Z" />
-        <path d="M-70 513C155 529 212 384 399 407S705 633 980 647V670H-70Z" />
-      </g>
-      <g
-        className="wave-layer wave-lines"
-        fill="none"
-        stroke="white"
-        strokeWidth="1.1"
-        strokeOpacity=".85"
-      >
-        <path d="M-70 397C125 444 278 439 420 377S679 623 980 638" />
-        <path d="M-70 508C106 559 162 388 341 455S463 622 980 555" />
-      </g>
-    </svg>
+      <img
+        className="wave-layer"
+        src={`/assets/${variant === "profile" ? "profile" : "footer"}-wave.svg`}
+        alt=""
+      />
+    </div>
   );
 }
-export function Footer({ animate = false }) {
+export function PageTitle({ as: Tag = "h1", children, className = "" }) {
+  return (
+    <Tag className={`page-title ${className}`} tabIndex="-1">
+      {children}
+    </Tag>
+  );
+}
+export function TraitCard({ type, label, level }) {
+  return (
+    <section className={`trait-card trait-card--${type}`}>
+      <Icon name={type === "adhd" ? "brain" : "infinity"} />
+      <div>
+        <span>{label}</span>
+        <strong>{level}</strong>
+      </div>
+    </section>
+  );
+}
+export function ResultsShell({ children }) {
   const { t } = useApp();
   return (
-    <footer className="footer">
+    <Page className="results" navigationTitle={t("results")}>
+      {children}
+    </Page>
+  );
+}
+export function Footer({ animate = false, desktop = false }) {
+  const { t } = useApp();
+  return (
+    <footer className={`footer ${desktop ? "footer--desktop" : ""}`}>
       <Waves animate={animate} />
       <div className="footer-art">
         <span>{t("footerLeft")}</span>
         <img
           className="script-art"
-          src="/assets/different-minds.svg"
-          width="180"
-          height="185"
+          src="/assets/footer-script.svg"
+          width="116"
+          height="134"
+          loading="lazy"
           alt="Different Minds Brighter Lives"
         />
       </div>
@@ -329,16 +270,24 @@ export function Page({
   className = "",
   home = false,
   animate = false,
+  navigationTitle,
 }) {
   const ref = useRef(null);
   const show = useOverflow(ref, home);
   const { t } = useApp();
   return (
-    <>
+    <div
+      className={`page-shell ${className ? `page-shell--${className}` : ""}`}
+    >
       <Header />
       <main className={`page ${className}`}>
         <div ref={ref} className="meaningful">
-          {!home && <Back />}
+          {!home && (
+            <div className="page-navigation">
+              <Back />
+              {navigationTitle && <PageTitle>{navigationTitle}</PageTitle>}
+            </div>
+          )}
           {children}
         </div>
       </main>
@@ -357,13 +306,13 @@ export function Page({
           <Icon name="down" />
         </button>
       )}
-    </>
+    </div>
   );
 }
-export function Tabs({ labels, value, onChange, label }) {
+export function Tabs({ labels, value, onChange, label, variant = "results" }) {
   const id = useId();
   return (
-    <div className="tabs" role="tablist" aria-label={label}>
+    <div className={`tabs tabs--${variant}`} role="tablist" aria-label={label}>
       {labels.map((text, i) => (
         <button
           key={text}
@@ -406,7 +355,8 @@ export function RadioGroup({ question, value, onChange, responses }) {
             name="response"
             value={4 - i}
             checked={value === 4 - i}
-            onChange={() => onChange(4 - i)}
+            onChange={() => {}}
+            onClick={() => onChange(4 - i)}
           />
           <span>{label}</span>
         </label>
@@ -434,7 +384,7 @@ export function Accordion({ name, level, open, onToggle, children }) {
 export function InformationPage({ title, intro, sections, children }) {
   return (
     <Page className="information">
-      <h1 tabIndex="-1">{title}</h1>
+      <PageTitle>{title}</PageTitle>
       {intro && <p className="intro">{intro}</p>}
       {sections.map(
         (s, i) =>
@@ -455,19 +405,31 @@ export function ProviderCard({ provider, urgent = false }) {
   const { t } = useApp();
   return (
     <Card className="provider">
-      <h2>{provider.name}</h2>
-      <p>{provider.address || t(provider.coverage || "online")}</p>
-      {urgent && <p>{t("urgentDescription")}</p>}
-      <a href={provider.url} target="_blank" rel="noopener noreferrer">
-        {t("visit")} ↗
-      </a>
-      {provider.annotation && (
-        <p className="annotation">
-          <Icon name="info" />
-          {t("annotation")}
-        </p>
+      {provider.logo && (
+        <img
+          className="provider-logo"
+          src={provider.logo}
+          alt=""
+          loading="lazy"
+        />
       )}
-      {provider.nationalNote && <p className="annotation">{t("nasomNote")}</p>}
+      <div className="provider-details">
+        <h2>{provider.name}</h2>
+        <p>{provider.address || t(provider.coverage || "online")}</p>
+        {urgent && <p>{t("urgentDescription")}</p>}
+        <a href={provider.url} target="_blank" rel="noopener noreferrer">
+          {t("visit")} ↗
+        </a>
+        {provider.annotation && (
+          <p className="annotation">
+            <Icon name="info" />
+            {t("annotation")}
+          </p>
+        )}
+        {provider.nationalNote && (
+          <p className="annotation">{t("nasomNote")}</p>
+        )}
+      </div>
     </Card>
   );
 }

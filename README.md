@@ -26,14 +26,18 @@ This repository is the continuing code source of truth. Modify the existing shar
 - `src/domain/scoring.js`: deterministic scoring and provisional thresholds.
 - `src/domain/session.js`: validation/reset behaviour.
 - `src/data`: exact approved provider links and geography.
-- `public/assets`: immutable supplied BMC SVG and purple GIF.
+- `public/assets`: immutable supplied BMC SVG and purple GIF, Figma-exported artwork, and locally hosted Inter fonts with their licence.
+- `docs/traceability.json`: requirement-by-requirement correction status.
+- `docs/qa-progress.md`: current post-audit verification evidence and remaining checks.
 - `docs/architecture.md`: application boundaries and decisions.
 - `docs/TODO.md`: genuine remaining content and launch items.
 - `docs/validation.md`: verification evidence and limitations.
 
 ## Privacy and safety
 
-Responses and view state use memory/sessionStorage only. No localStorage, accounts, result database, analytics, telemetry or AI scoring. A refresh retains the active session where browser storage is available. Browser restore behaviour varies; no cryptographic-deletion promise is made. Scores are recalculated from validated answers; invalid sessions offer a restart. Retake clears assessment state and consent while retaining the session language.
+Responses and view state use memory/sessionStorage only. No localStorage, accounts, result database, analytics, telemetry or AI scoring. A refresh retains the active session where browser storage is available. Browser restore behaviour varies; no cryptographic-deletion promise is made. Scores are recalculated from validated answers; invalid sessions offer a restart. Retake clears answers, progress, completion and derived result state while preserving eligibility, consent, language and unrelated session preferences. Back to the questionnaire preserves answers for review and invalidates completion until the current answer set is completed again.
+
+`qa.html` is a development-only viewport/fixture harness. It uses disposable synthetic session data and production components; do not use it to preserve a personal assessment. `qa-building.html` holds the production Building content still for visual inspection. Neither is included in `dist/`. Actual Building timing is verified separately through the normal questionnaire flow.
 
 External provider and donation links open a separate context with `noopener noreferrer`. They receive no assessment answers or result parameters. QR generation runs locally, without a third-party QR service.
 

@@ -8,6 +8,7 @@ import { readFileSync } from "node:fs";
 
 test("all four Results titles and graphic states share the final classification", async () => {
   const server = await createServer({
+    cacheDir: "node_modules/.vite-tests",
     server: { middlewareMode: true },
     appType: "custom",
   });
@@ -44,7 +45,7 @@ test("all four Results titles and graphic states share the final classification"
       assert.ok(html.includes(`data-classification="${classification}"`));
       assert.ok(
         html.includes(
-          `<h1 tabindex="-1">${strings.results[classification].name}</h1>`,
+          `<h2 class="page-title " tabindex="-1">${strings.results[classification].name}</h2>`,
         ),
       );
       assert.ok(

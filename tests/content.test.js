@@ -30,6 +30,13 @@ test("English/Chinese key parity and complete question and interpretation matrix
       }
     }
     assert.equal(locale.summaries.length, 4);
+    assert.equal(locale.scoreTexts.length, 3);
+    for (const interpretation of locale.scoreTexts) {
+      assert.ok(
+        interpretation.trim(),
+        "Every score band needs production interpretation copy",
+      );
+    }
   }
 });
 test("approved provider links are actual destinations and unique assessment records", () => {

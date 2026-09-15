@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>MindLens development QA</title>
+  <style>
+    body {
+      font: 14px Arial;
+      margin: 12px;
+      background: #ddd;
+    }
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    iframe {
+      display: block;
+      border: 0;
+      background: white;
+    }
+    button,
+    select {
+      padding: 8px;
+    }
+  </style>
+  <nav>
+    <label
+      >Viewport
+      <select id="viewport">
+        <option>360x740</option>
+        <option>320x640</option>
+        <option>390x844</option>
+        <option>430x932</option>
+        <option>360x640</option>
+        <option>430x700</option>
+        <option>1280x900</option>
+      </select></label
+    >
+    <label
+      >Language
+      <select id="locale">
+        <option value="en">English</option>
+        <option value="zh-CN">Chinese</option>
+      </select></label
+    >
+    <label
+      >Fixture
+      <select id="fixture">
+        <option value="home">Fresh Home</option>
+        <option value="questionnaire">Unanswered Questionnaire</option>
+        <option value="neutral">Neutral Results</option>
+        <option value="adhd">ADHD Results</option>
+        <option value="asd">ASD Results</option>
+        <option value="audhd">AuDHD Results</option>
+        <option value="moderate">Moderate Score</option>
+        <option value="building">Building</option>
+        <option value="building-visual">Building visual only</option>
+        <option value="explore">Explore</option>
+        <option value="together">Putting It All Together</option>
+        <option value="professional">Professional Support</option>
+        <option value="support">Support Me</option>
+        <option value="terms">Terms</option>
+        <option value="accuracy">Accuracy</option>
+      </select></label
+    >
+    <button id="load">Load disposable fixture</button
+    ><span id="dimensions"></span>
+  </nav>
+  <iframe id="app" title="MindLens preview"></iframe>
+  <pre id="metrics"></pre>
+  <pre id="events"></pre>
+  <script type="module">
+    import { initialSession, SESSION_KEY } from "/src/domain/session.js";
+    const frame = document.querySelector("iframe");
+    const viewport = document.querySelector("#viewport");
+    const locale = document.querySelector("#locale");
+    const fixture = document.querySelector("#fixture");
+    const events = [];
+    frame.addEventListener("load", () => {
+      const d = frame.contentDocument;
+      let previous = "";
+      const observe = () => {
+        const state = [
+          d.querySelector("main h1")?.textContent,
+          d.querySelector(".status")?.textContent,
+          d.querySelector(".progress-meta")?.textContent,
+        ].join(" | ");
+        if (state !== previous) {
+          events.push({ time: Math.round(performance.now()), state });
+          previous = state;
+          document.querySelector("#events").textContent = JSON.stringify(
+            events.slice(-15),
+            null,
+            2,
+          );
+        }
+      };
+      const measure = () => {
+        const w = frame.contentWindow;
+        const main = d.querySelector(".meaningful");
+        const s = JSON.parse(sessionStorage.getItem(SESSION_KEY) || "{}");
+        const rect = (e) => {
+          const r = e.getBoundingClientRect();
+          return {
+            x: Math.round(r.x),
+            y: Math.round(r.y),
+            width: Math.round(r.width),
+            height: Math.round(r.height),
+          };
+        };
+        document.querySelector("#metrics").textContent = JSON.stringify(
+          {
+            route: w.location.hash,
+            locale: d.documentElement.lang,
+            width: w.innerWidth,
+            height: w.innerHeight,
+            horizontalOverflow:
+              d.documentElement.scrollWidth > d.documentElement.clientWidth,
+            mainBottom: main
+              ? Math.round(main.getBoundingClientRect().bottom + w.scrollY)
+              : null,
+            scrollY: w.scrollY,
+            cue: !!d.querySelector(".overflow-cue"),
+            titles: [...d.querySelectorAll(".page-title")].map((e) => ({
+              text: e.textContent,
+              size: w.getComputedStyle(e).fontSize,
+              weight: w.getComputedStyle(e).fontWeight,
+            })),
+            donut: d.querySelector(".donut")
+              ? rect(d.querySelector(".donut"))
+              : null,
+            cards: [...d.querySelectorAll(".trait-card")].map(rect),
+            classification:
+              d.querySelector(".result-graphic")?.dataset.classification,
+            answers: s.answers?.filter((v) => v !== null).length,
+            completed: s.completed,
+            position: s.position,
+            images: [...d.images]
+              .filter((i) => !i.complete || !i.naturalWidth)
+              .map((i) => i.getAttribute("src")),
+            motion: [...d.querySelectorAll(".wave-layer")].map(
+              (e) => w.getComputedStyle(e).animationName,
+            ),
+          },
+          null,
+          2,
+        );
+      };
+      const update = () => {
+        observe();
+        requestAnimationFrame(measure);
+      };
+      new MutationObserver(update).observe(d.body, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+        attributes: true,
+      });
+      new ResizeObserver(measure).observe(d.documentElement);
+      d.addEventListener("scroll", measure);
+      update();
+    });
+    function size() {
+      const [w, h] = viewport.value.split("x");
+      frame.width = w;
+      frame.height = h;
+      document.querySelector("#dimensions").textContent = `${w} × ${h}`;
+    }
+    function load() {
+      const s = initialSession();
+      const f = fixture.value;
+      let route = f;
+      if (f !== "home") {
+        s.adult = true;
+        s.terms = true;
+      }
+      if (
+        [
+          "neutral",
+          "adhd",
+          "asd",
+          "audhd",
+          "moderate",
+          "building",
+          "explore",
+          "together",
+        ].includes(f)
+      ) {
+        s.answers = Array.from({ length: 22 }, (_, i) =>
+          f === "moderate"
+            ? 2
+            : f === "neutral"
+              ? 0
+              : f === "adhd"
+                ? i < 7
+                  ? 4
+                  : 0
+                : f === "asd"
+                  ? i >= 7 && i < 17
+                    ? 4
+                    : 0
+                  : 4,
+        );
+        s.position = 21;
+        s.completed = true;
+        s.buildingStarted = Date.now();
+        route = ["building", "explore", "together"].includes(f) ? f : "results";
+      }
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(s));
+      sessionStorage.setItem("mindlens.language", locale.value);
+      frame.src =
+        (f === "building-visual" ? "/qa-building.html" : "/") +
+        "?qa=" +
+        Date.now() +
+        "#" +
+        route;
+    }
+    viewport.addEventListener("change", size);
+    document.querySelector("#load").addEventListener("click", load);
+    size();
+    load();
+  </script>
+</html>

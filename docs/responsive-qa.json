@@ -1,0 +1,909 @@
+[
+  {
+    "fixture": "home",
+    "route": "#home",
+    "locale": "en",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 818,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "ADHD、ASD，还是两者都有？",
+        "size": "27px",
+        "weight": "600"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "drift"
+    ]
+  },
+  {
+    "fixture": "questionnaire",
+    "route": "#questionnaire",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 824,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "对于无法引起我兴趣的任务，我很难持续保持专注。",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "audhd",
+    "route": "#results",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 796,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "评估结果",
+        "size": "20px",
+        "weight": "500"
+      },
+      {
+        "text": "AuDHD 相关特质",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [
+      {
+        "x": 20,
+        "y": 377,
+        "width": 126,
+        "height": 68
+      },
+      {
+        "x": 160,
+        "y": 377,
+        "width": 126,
+        "height": 68
+      }
+    ],
+    "classification": "3",
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "building-visual",
+    "route": "#home",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 525,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "正在建立你的特质画像",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "drift",
+      "drift"
+    ]
+  },
+  {
+    "fixture": "explore",
+    "route": "#explore",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 786,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "深入了解你的结果",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "together",
+    "route": "#together",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 1124,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "综合解读",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "professional",
+    "route": "#professional",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 850,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "寻找专业支持",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "support",
+    "route": "#support",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 913,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "支持我",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "terms",
+    "route": "#terms",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 1712,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "使用条款",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "accuracy",
+    "route": "#accuracy",
+    "locale": "zh-CN",
+    "width": 320,
+    "height": 640,
+    "horizontalOverflow": false,
+    "mainBottom": 1277,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "这项评估有多准确？",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "home",
+    "route": "#home",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 850,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "ADHD、ASD，还是两者都有？",
+        "size": "30.1px",
+        "weight": "600"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "drift"
+    ]
+  },
+  {
+    "fixture": "questionnaire",
+    "route": "#questionnaire",
+    "locale": "zh-CN",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 792,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "对于无法引起我兴趣的任务，我很难持续保持专注。",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "audhd",
+    "route": "#results",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 800,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "评估结果",
+        "size": "20px",
+        "weight": "500"
+      },
+      {
+        "text": "AuDHD 相关特质",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [
+      {
+        "x": 26,
+        "y": 400,
+        "width": 175,
+        "height": 68
+      },
+      {
+        "x": 215,
+        "y": 400,
+        "width": 175,
+        "height": 68
+      }
+    ],
+    "classification": "3",
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "building-visual",
+    "route": "#building-visual",
+    "locale": "",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 428,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "正在建立你的特质画像",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/profile-brain.svg",
+      "/assets/profile-wave.svg",
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "drift",
+      "drift"
+    ]
+  },
+  {
+    "fixture": "explore",
+    "route": "#explore",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 765,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "深入了解你的结果",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "together",
+    "route": "#together",
+    "locale": "zh-CN",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1019,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "综合解读",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "professional",
+    "route": "#professional",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 813,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "寻找专业支持",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "support",
+    "route": "#support",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 777,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "支持我",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/purple_thanks.gif",
+      "/assets/github-mark.svg",
+      "/assets/bmc-button.svg",
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "terms",
+    "route": "#terms",
+    "locale": "zh-CN",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1488,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "使用条款",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "accuracy",
+    "route": "#accuracy",
+    "locale": "zh-CN",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1135,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "这项评估有多准确？",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "home",
+    "route": "#home",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 830,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "ADHD, ASD or Both?",
+        "size": "30.1px",
+        "weight": "600"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "drift"
+    ]
+  },
+  {
+    "fixture": "questionnaire",
+    "route": "#questionnaire",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 829,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "I find it difficult to stay focused on tasks that do not hold my interest.",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "audhd",
+    "route": "#results",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 839,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "Assessment Results",
+        "size": "20px",
+        "weight": "500"
+      },
+      {
+        "text": "AuDHD-associated traits",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [
+      {
+        "x": 26,
+        "y": 400,
+        "width": 175,
+        "height": 68
+      },
+      {
+        "x": 215,
+        "y": 400,
+        "width": 175,
+        "height": 68
+      }
+    ],
+    "classification": "3",
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "building-visual",
+    "route": "#home",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 428,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "Building your trait profile",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [
+      "/assets/profile-brain.svg",
+      "/assets/profile-wave.svg",
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "drift",
+      "drift"
+    ]
+  },
+  {
+    "fixture": "explore",
+    "route": "#explore",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 786,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "Explore your results",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [
+      "/assets/footer-wave.svg",
+      "/assets/footer-script.svg"
+    ],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "together",
+    "route": "#together",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1145,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "Putting it all together",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 22,
+    "completed": true,
+    "position": 21,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "professional",
+    "route": "#professional",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 870,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "Find professional support",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "support",
+    "route": "#support",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 877,
+    "scrollY": 0,
+    "cue": false,
+    "titles": [
+      {
+        "text": "Support Me",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "terms",
+    "route": "#terms",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1779,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "Terms of Use",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  },
+  {
+    "fixture": "accuracy",
+    "route": "#accuracy",
+    "locale": "en",
+    "width": 430,
+    "height": 932,
+    "horizontalOverflow": false,
+    "mainBottom": 1500,
+    "scrollY": 0,
+    "cue": true,
+    "titles": [
+      {
+        "text": "How accurate is this assessment?",
+        "size": "20px",
+        "weight": "500"
+      }
+    ],
+    "donut": null,
+    "cards": [],
+    "answers": 0,
+    "completed": false,
+    "position": 0,
+    "images": [],
+    "motion": [
+      "none"
+    ]
+  }
+]

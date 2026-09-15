@@ -451,6 +451,7 @@
     "future": "I also intend to make the MindLens Git repository publicly available in the future so others can inspect the project, learn from it and reuse the work."
   },
   "ui": {
+    "home": "Home",
     "back": "Back",
     "previous": "Previous",
     "next": "Next",
@@ -511,7 +512,6 @@
     "footerScript": "Different Minds Brighter Lives",
     "footReflection": "For self-reflection only",
     "footDiagnosis": "Not a medical diagnosis",
-    "footAdvice": "Seek professional advice",
     "attentionDifference": "Attention Difference",
     "differentPerspective": "Different Perspective",
     "sharedStrengths": "Shared Strengths",

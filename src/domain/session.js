@@ -61,7 +61,16 @@ export function reducer(s, action) {
   switch (action.type) {
     case "patch":
       return { ...s, ...action.patch };
+    case "review":
+      return {
+        ...s,
+        completed: false,
+        buildingStarted: null,
+        resultTab: 0,
+        openAreas: [],
+      };
     case "answer": {
+      if (!validAnswer(action.value)) return s;
       const answers = [...s.answers];
       answers[s.position] = action.value;
       return {
@@ -83,7 +92,15 @@ export function reducer(s, action) {
           }
         : s;
     case "retake":
-      return initialSession();
+      return {
+        ...s,
+        answers: Array(22).fill(null),
+        position: 0,
+        completed: false,
+        buildingStarted: null,
+        resultTab: 0,
+        openAreas: [],
+      };
     default:
       return s;
   }
