@@ -20,7 +20,13 @@ import {
   ProviderCard,
   Footer,
 } from "../components/shared.jsx";
-import { DONATION_URL, canonicalUrl, CITY_MARKETS } from "../data/config.js";
+import {
+  DONATION_URL,
+  REPOSITORY_URL,
+  assetUrl,
+  canonicalUrl,
+  CITY_MARKETS,
+} from "../data/config.js";
 import assessment from "../data/assessment.json";
 import health from "../data/mental-health.json";
 export function Home() {
@@ -33,7 +39,7 @@ export function Home() {
       <PageTitle>{t("hero")}</PageTitle>
       <p className="intro">{t("heroText")}</p>
       <div className="hero-venn">
-        <img className="home-circles" src="/assets/home-venn.svg" alt="" />
+        <img className="home-circles" src={assetUrl("home-venn.svg")} alt="" />
         <div className="venn-label left">
           <Icon name="brain" />
           <strong>ADHD</strong>
@@ -264,7 +270,7 @@ export function BuildingContent({ elapsed }) {
       <div className="profile-illustration">
         <img
           className="profile-brain"
-          src="/assets/profile-brain.svg"
+          src={assetUrl("profile-brain.svg")}
           width="58"
           height="58"
           alt=""
@@ -605,7 +611,7 @@ export function Support() {
       <div className="thanks-crop">
         <img
           className="thanks-gif"
-          src="/assets/purple_thanks.gif"
+          src={assetUrl("purple_thanks.gif")}
           width="480"
           height="480"
           alt=""
@@ -617,7 +623,7 @@ export function Support() {
       <Card className="future">
         <span className="icon-disc">
           <img
-            src="/assets/github-mark.svg"
+            src={assetUrl("github-mark.svg")}
             width="25"
             height="25"
             alt="GitHub"
@@ -626,6 +632,9 @@ export function Support() {
         <div>
           <h2>{strings.support.futureTitle}</h2>
           <p>{strings.support.future}</p>
+          <a href={REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
+            {strings.support.repositoryCTA}
+          </a>
         </div>
       </Card>
       <a
@@ -636,7 +645,7 @@ export function Support() {
         aria-label={t("supportCTA")}
       >
         <img
-          src="/assets/bmc-button.svg"
+          src={assetUrl("bmc-button.svg")}
           alt="Buy me a coffee"
           width="260"
           height="73"
@@ -692,18 +701,23 @@ export function Desktop() {
             alt="Scan to open MindLens on your phone"
           />
         )}
-        <Button
-          onClick={async () => {
-            try {
-              if (!(await copyText(url))) throw new Error("Copy unavailable");
-              setCopy("Link copied / 链接已复制");
-            } catch {
-              setCopy("Please copy the link below. / 请复制下方链接。");
-            }
-          }}
-        >
-          Copy link / 复制链接
-        </Button>
+        <div className="handoff-actions">
+          <Button
+            onClick={async () => {
+              try {
+                if (!(await copyText(url))) throw new Error("Copy unavailable");
+                setCopy("Link copied / 链接已复制");
+              } catch {
+                setCopy("Please copy the link below. / 请复制下方链接。");
+              }
+            }}
+          >
+            Copy link / 复制链接
+          </Button>
+          <a href={REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
         <p className="canonical">{url}</p>
         <p role="status">{copy}</p>
       </main>

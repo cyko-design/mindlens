@@ -1216,6 +1216,17 @@ p.reassurance {
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
+.handoff-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.handoff-actions > a {
+  font-size: 13px;
+  color: var(--muted);
+}
 .canonical {
   font-size: 13px;
   margin: 16px 0 0;

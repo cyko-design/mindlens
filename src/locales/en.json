@@ -447,8 +447,9 @@
       "Keeping MindLens free still has costs, including hosting, maintenance and continued development. If you find the project useful and would like to support it, an optional contribution helps me keep improving MindLens while keeping the assessment and results free for everyone.",
       "There is no paid version, subscription or locked result. Supporting MindLens does not change what you can access."
     ],
-    "futureTitle": "Open for others in the future",
-    "future": "I also intend to make the MindLens Git repository publicly available in the future so others can inspect the project, learn from it and reuse the work."
+    "futureTitle": "Open for everyone",
+    "future": "MindLens is open source. The public repository is available for anyone who wants to review the project, learn from the implementation, or use the code in their own work.",
+    "repositoryCTA": "View the project on GitHub"
   },
   "ui": {
     "home": "Home",

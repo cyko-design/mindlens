@@ -1,5 +1,6 @@
 import { useId, useRef } from "react";
 import { useApp, useOverflow } from "../hooks/runtime.jsx";
+import { assetUrl } from "../data/config.js";
 export function Icon({ name = "arrow", ...props }) {
   const paths = {
     arrow: (
@@ -208,7 +209,9 @@ export function Waves({ animate = false, className = "", variant = "footer" }) {
     >
       <img
         className="wave-layer"
-        src={`/assets/${variant === "profile" ? "profile" : "footer"}-wave.svg`}
+        src={assetUrl(
+          `${variant === "profile" ? "profile" : "footer"}-wave.svg`,
+        )}
         alt=""
       />
     </div>
@@ -249,7 +252,7 @@ export function Footer({ animate = false, desktop = false }) {
         <span>{t("footerLeft")}</span>
         <img
           className="script-art"
-          src="/assets/footer-script.svg"
+          src={assetUrl("footer-script.svg")}
           width="116"
           height="134"
           loading="lazy"

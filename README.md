@@ -1,52 +1,39 @@
 # MindLens
 
-Mobile-only, bilingual English/Simplified Chinese research-informed self-reflection MVP. It is not a diagnostic instrument. Desktop renders only a bilingual QR/copy-link handoff.
+A free, research-informed self-reflection tool for adults exploring ADHD, ASD and AuDHD traits. Available in English and Simplified Chinese. MindLens is not a diagnostic instrument.
 
-## Run
+**[Open MindLens](https://cyko-design.github.io/mindlens/)**
 
-Requires Node.js 22.12+ (Node 24 supported) and npm.
+Use a mobile browser for the assessment. Desktop visitors receive a QR code and copy-link handoff.
+
+<a href="https://buymeacoffee.com/cyuen"><img src="public/assets/bmc-button.svg" alt="Buy me a coffee" width="180"></a>
+
+## Privacy
+
+No account, personal details, analytics or result database. Assessment state stays in browser memory/sessionStorage. The complete assessment and results are free.
+
+## Run locally
+
+Node.js 22.12+ and npm are required.
 
 ```sh
 npm ci
 npm run dev
-npm test
 npm run build
-npm run preview
 ```
 
-`npm run build` creates static production files in `dist/`. Deploy that directory to a static host. All navigation uses hash routes, so no server-side route rewrite is needed. The QR and Copy link use the current origin automatically. No server environment variables, API key or database are required.
+`npm test` runs the existing tests. `npm run preview` serves the production build.
 
-## Continuing development
+## Project structure
 
-This repository is the continuing code source of truth. Modify the existing shared components and central data rather than regenerating screens. Keep `main` buildable; use a feature branch for substantial changes and run tests/build before merging.
+- `src/components`: reusable interface components.
+- `src/locales`: approved English and Simplified Chinese content.
+- `src/domain`: deterministic scoring and session lifecycle.
+- `src/data`: professional-support data and configuration.
+- `public/assets`: production SVGs, supplied donation assets and licensed fonts.
 
-- `src/components/shared.jsx`: shared production UI and artwork.
-- `src/styles.css`: design tokens and responsive styles.
-- `src/locales/en.json`, `zh-CN.json`: central content.
-- `src/domain/scoring.js`: deterministic scoring and provisional thresholds.
-- `src/domain/session.js`: validation/reset behaviour.
-- `src/data`: exact approved provider links and geography.
-- `public/assets`: immutable supplied BMC SVG and purple GIF, Figma-exported artwork, and locally hosted Inter fonts with their licence.
-- `docs/traceability.json`: requirement-by-requirement correction status.
-- `docs/qa-progress.md`: current post-audit verification evidence and remaining checks.
-- `docs/architecture.md`: application boundaries and decisions.
-- `docs/TODO.md`: genuine remaining content and launch items.
-- `docs/validation.md`: verification evidence and limitations.
+## Deployment
 
-## Privacy and safety
+GitHub Actions builds `dist/` and deploys it to GitHub Pages on pushes to `main`. The workflow uses the Pages base path so application assets and the shared QR/copy destination resolve to MindLens correctly.
 
-Responses and view state use memory/sessionStorage only. No localStorage, accounts, result database, analytics, telemetry or AI scoring. A refresh retains the active session where browser storage is available. Browser restore behaviour varies; no cryptographic-deletion promise is made. Scores are recalculated from validated answers; invalid sessions offer a restart. Retake clears answers, progress, completion and derived result state while preserving eligibility, consent, language and unrelated session preferences. Back to the questionnaire preserves answers for review and invalidates completion until the current answer set is completed again.
-
-`qa.html` is a development-only viewport/fixture harness. It uses disposable synthetic session data and production components; do not use it to preserve a personal assessment. `qa-building.html` holds the production Building content still for visual inspection. Neither is included in `dist/`. Actual Building timing is verified separately through the normal questionnaire flow.
-
-External provider and donation links open a separate context with `noopener noreferrer`. They receive no assessment answers or result parameters. QR generation runs locally, without a third-party QR service.
-
-The original high-resolution screen references are not served as UI. The application uses semantic HTML, native form controls and reusable SVG/CSS elements. Supplied immutable assets have SHA-256 integrity tests.
-
-## Hosting
-
-The optional `.openai/hosting.json` associates a private Sites deployment. GitHub remains the application code source of truth; Sites receives a deployment copy of the same application. Preserve both repository identity and deployment project identity in later edits.
-
-## Future GitHub Pages launch
-
-The intended eventual production host is GitHub Pages. Do not enable Pages or make the repository public until the owner confirms the bugs are resolved and explicitly authorises public release. The current Sites deployment remains a private review environment. Before that move, configure and verify Vite's base path and asset/canonical links for the chosen Pages URL.
+This repository is the continuing codebase. Keep changes scoped and preserve the approved assessment content and scoring.

@@ -1,5 +1,8 @@
 export const DONATION_URL = "https://buymeacoffee.com/cyuen";
-export const canonicalUrl = () => new URL("/", window.location.origin).href;
+export const REPOSITORY_URL = "https://github.com/cyko-design/mindlens";
+export const assetUrl = (name) => `${import.meta.env.BASE_URL}assets/${name}`;
+export const canonicalUrl = () =>
+  new URL(import.meta.env.BASE_URL, window.location.origin).href;
 export const CITY_MARKETS = {
   "Kuala Lumpur/Klang Valley": "Malaysia",
   Singapore: "Singapore",
