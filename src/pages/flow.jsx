@@ -713,7 +713,7 @@ export function Desktop() {
             }}
           >
             Copy link / 复制链接
-          </Button><br /><br />
+          </Button>
           <a href={REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
