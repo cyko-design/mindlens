@@ -217,7 +217,7 @@ export function Questionnaire() {
         onChange={(value) => {
           if (advanceTimer.current) return;
           dispatch({ type: "answer", value });
-          if (i < 21) advanceTimer.current = setTimeout(next, 180);
+          advanceTimer.current = setTimeout(next, 180);
         }}
       />
       <div className="question-nav">

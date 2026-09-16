@@ -77,7 +77,9 @@
     "address": "51 Huayuan North Road, Haidian District, Beijing, China",
     "url": "https://www.pkuh6.cn/",
     "annotation": false,
-    "nationalNote": false
+    "nationalNote": false,
+    "nameZh": "北京大学第六医院",
+    "addressZh": "北京市海淀区花园北路51号"
   },
   {
     "id": "assessment-8",
@@ -87,7 +89,9 @@
     "address": "600 Wanping South Road, Xuhui District, Shanghai, China",
     "url": "https://www.smhc.org.cn/lczl/tsks/xlzxmz.htm",
     "annotation": false,
-    "nationalNote": false
+    "nationalNote": false,
+    "nameZh": "上海市精神卫生中心",
+    "addressZh": "上海市徐汇区宛平南路600号"
   },
   {
     "id": "assessment-9",
@@ -97,7 +101,9 @@
     "address": "1080 Cuizhu Road, Luohu District, Shenzhen, China",
     "url": "https://www.szknyy.com/",
     "annotation": true,
-    "nationalNote": false
+    "nationalNote": false,
+    "nameZh": "深圳市康宁医院（深圳市精神卫生中心）",
+    "addressZh": "深圳市罗湖区翠竹路1080号"
   },
   {
     "id": "assessment-10",
@@ -107,7 +113,9 @@
     "address": "218 Fangcun Avenue Middle, Liwan District, Guangzhou, China",
     "url": "https://www.gzbrain.cn/",
     "annotation": true,
-    "nationalNote": false
+    "nationalNote": false,
+    "nameZh": "广州医科大学附属脑科医院",
+    "addressZh": "广州市荔湾区明心路36号"
   },
   {
     "id": "assessment-11",

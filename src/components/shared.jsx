@@ -405,7 +405,13 @@ export function InformationPage({ title, intro, sections, children }) {
   );
 }
 export function ProviderCard({ provider, urgent = false }) {
-  const { t } = useApp();
+  const { t, locale } = useApp();
+  const name =
+    locale === "zh-CN" ? provider.nameZh || provider.name : provider.name;
+  const address =
+    locale === "zh-CN"
+      ? provider.addressZh || provider.address
+      : provider.address;
   return (
     <Card className="provider">
       {provider.logo && (
@@ -417,8 +423,8 @@ export function ProviderCard({ provider, urgent = false }) {
         />
       )}
       <div className="provider-details">
-        <h2>{provider.name}</h2>
-        <p>{provider.address || t(provider.coverage || "online")}</p>
+        <h2>{name}</h2>
+        <p>{address || t(provider.coverage || "online")}</p>
         {urgent && <p>{t("urgentDescription")}</p>}
         <a href={provider.url} target="_blank" rel="noopener noreferrer">
           {t("visit")} ↗
